@@ -47,6 +47,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -147,32 +148,62 @@ export default function Navigation() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            className="fixed inset-0 z-40 bg-slate-950/98 pt-20 lg:hidden overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-slate-950 pt-20 lg:hidden overflow-y-auto"
           >
-            <div className="p-6 space-y-4">
+            <div className="p-6 space-y-1 pb-24">
               {navItems.map((item) => (
-                <div key={item.href}>
-                  <Link
-                    to={item.href}
-                    className="block font-mono text-lg text-white py-2"
-                  >
-                    {item.label}
-                  </Link>
-                  {item.submenu && (
-                    <div className="pl-4 space-y-2 mt-2">
-                      {item.submenu.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          to={sub.href}
-                          className="block font-mono text-sm text-muted py-1"
+                <div key={item.href} className="border-b border-slate-800">
+                  {item.submenu ? (
+                    <>
+                      <button
+                        onClick={() => setMobileSubmenu(mobileSubmenu === item.label ? null : item.label)}
+                        className="w-full flex items-center justify-between font-mono text-base text-white py-4 px-2"
+                      >
+                        <span className={location.pathname.startsWith(item.href) ? 'text-neon' : ''}>{item.label}</span>
+                        <motion.span
+                          animate={{ rotate: mobileSubmenu === item.label ? 180 : 0 }}
+                          className="text-neon text-xs"
                         >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
+                          ▼
+                        </motion.span>
+                      </button>
+                      <AnimatePresence>
+                        {mobileSubmenu === item.label && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden bg-slate-900/50"
+                          >
+                            {item.submenu.map((sub) => (
+                              <Link
+                                key={sub.href}
+                                to={sub.href}
+                                className={`block font-mono text-sm py-3 px-6 border-l-2 ${
+                                  location.pathname === sub.href
+                                    ? 'text-neon border-neon bg-neon/5'
+                                    : 'text-slate-400 border-transparent hover:text-white'
+                                }`}
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`block font-mono text-base py-4 px-2 ${
+                        location.pathname === item.href ? 'text-neon' : 'text-white'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
                   )}
                 </div>
               ))}
