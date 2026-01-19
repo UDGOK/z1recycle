@@ -209,35 +209,11 @@ export default function Home() {
                 ENERGY FUTURE
               </motion.span>
             </h1>
-
-            {/* Animated Logo Badge - Now between headline and tagline */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.0, type: 'spring', stiffness: 100, damping: 15 }}
-              className="relative mx-auto my-8 w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"
-            >
-              {/* Outer glow - no ring */}
-              <div className="absolute inset-0 bg-gradient-to-r from-neon/30 to-cyan-500/30 blur-2xl animate-pulse" />
-              
-              {/* Video container - square with glow, no circular mask */}
-              <div className="relative w-full h-full overflow-hidden shadow-[0_0_80px_rgba(0,255,136,0.4)]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-contain"
-                >
-                  <source src="/logo-animation.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </motion.div>
             
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.3 }}
+              transition={{ delay: 1.1 }}
               className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 text-xl md:text-2xl mb-10 font-mono"
             >
               DOMESTIC CRITICAL MATERIALS INFRASTRUCTURE
