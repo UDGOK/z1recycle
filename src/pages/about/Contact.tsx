@@ -141,17 +141,42 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="border border-neon/20 p-6 bg-slate-900/50">
-                <div className="font-mono text-xs text-muted mb-4">// MAP</div>
-                <div className="aspect-video bg-slate-800 flex items-center justify-center border border-gray-700">
-                  <div className="text-center">
-                    <svg className="w-12 h-12 text-muted mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <div className="font-mono text-xs text-muted">Mead, OK 73449</div>
-                  </div>
+              {/* Interactive Map */}
+              <div className="border border-neon/20 bg-slate-900/50 overflow-hidden group">
+                <div className="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-neon/20">
+                  <div className="w-2 h-2 rounded-full bg-neon animate-pulse" />
+                  <span className="font-mono text-xs text-muted">// FACILITY_LOCATION</span>
+                  <a 
+                    href="https://www.google.com/maps/dir//8460+US-70,+Mead,+OK+73449" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="ml-auto font-mono text-xs text-neon hover:underline"
+                  >
+                    GET DIRECTIONS →
+                  </a>
+                </div>
+                <div className="relative aspect-video">
+                  {/* Dark overlay for theme matching */}
+                  <div className="absolute inset-0 pointer-events-none z-10 mix-blend-multiply bg-slate-900/30" />
+                  <div className="absolute inset-0 pointer-events-none z-10 border-2 border-neon/20" />
+                  {/* Corner accents */}
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-neon z-20" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-neon z-20" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-neon z-20" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-neon z-20" />
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3296.5!2d-96.5122!3d33.9967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c85a4d8c92fb1%3A0x0!2s8460%20US-70%2C%20Mead%2C%20OK%2073449!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, filter: 'grayscale(100%) invert(92%) hue-rotate(180deg) contrast(0.9) brightness(0.8)' }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Z1 Recycling Facility Location"
+                    className="absolute inset-0"
+                  />
+                  {/* Scan line effect */}
+                  <div className="absolute inset-0 pointer-events-none z-10 opacity-10 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,255,136,0.03)_2px,rgba(0,255,136,0.03)_4px)]" />
                 </div>
               </div>
 
