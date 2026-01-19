@@ -11,6 +11,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: 'HOME', href: '/' },
   { label: 'STRATEGIC IMPACT', href: '/strategic-impact' },
+  { label: 'TECHNOLOGY', href: '/technology' },
   {
     label: 'FACILITY',
     href: '/facility',

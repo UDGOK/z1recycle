@@ -12,6 +12,7 @@ import ManufacturingProcess from './pages/process/ManufacturingProcess';
 import EquipmentGuide from './pages/process/EquipmentGuide';
 import Sustainability from './pages/Sustainability';
 import StrategicImpact from './pages/StrategicImpact';
+import TechSpecs from './pages/TechSpecs';
 import Timeline from './pages/about/Timeline';
 import FAQ from './pages/about/FAQ';
 import Team from './pages/about/Team';
@@ -27,6 +28,7 @@ function App() {
           
           {/* Strategic Impact */}
           <Route path="/strategic-impact" element={<StrategicImpact />} />
+          <Route path="/technology" element={<TechSpecs />} />
           
           {/* Facility */}
           <Route path="/facility" element={<FacilityOverview />} />
