@@ -36,6 +36,7 @@ const navItems: NavItem[] = [
     href: '/about',
     submenu: [
       { label: 'Timeline', href: '/about/timeline' },
+      { label: 'Team', href: '/about/team' },
       { label: 'FAQ', href: '/about/faq' },
       { label: 'Contact', href: '/about/contact' },
     ],

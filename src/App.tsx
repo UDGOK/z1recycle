@@ -14,6 +14,7 @@ import Sustainability from './pages/Sustainability';
 import StrategicImpact from './pages/StrategicImpact';
 import Timeline from './pages/about/Timeline';
 import FAQ from './pages/about/FAQ';
+import Team from './pages/about/Team';
 import Contact from './pages/about/Contact';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           {/* About */}
           <Route path="/about" element={<Timeline />} />
           <Route path="/about/timeline" element={<Timeline />} />
+          <Route path="/about/team" element={<Team />} />
           <Route path="/about/faq" element={<FAQ />} />
           <Route path="/about/contact" element={<Contact />} />
         </Routes>
