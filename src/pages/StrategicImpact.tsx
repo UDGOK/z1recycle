@@ -29,8 +29,8 @@ const pillars = [
     ),
     stat: 150,
     statSuffix: '+',
-    statLabel: 'Jobs Created',
-    description: 'Driving regional economic development through high-tech manufacturing jobs and industrial investment.',
+    statLabel: 'High-Skilled Careers Created',
+    description: 'Driving regional economic development through advanced manufacturing jobs and industrial investment.',
     points: [
       'Advanced manufacturing careers',
       'Local workforce development',
@@ -46,8 +46,8 @@ const pillars = [
     ),
     stat: 3,
     statSuffix: '',
-    statLabel: 'Chemistries Supported',
-    description: 'Pioneering next-generation battery technologies including sodium-ion R&D for grid-scale energy storage.',
+    statLabel: 'Bridging Lab to Market',
+    description: 'Pioneering next-generation battery technologies including sodium-ion R&D and commercial-scale manufacturing.',
     points: [
       'Lithium-ion processing',
       'Sodium-ion development',
@@ -60,7 +60,7 @@ const impactMetrics = [
   { value: 10000, suffix: ' tons', label: 'Annual Processing Capacity' },
   { value: 60000, suffix: ' SF', label: 'Purpose-Built Facility' },
   { value: 99, suffix: '%', label: 'Material Recovery Rate' },
-  { value: 0, suffix: '', label: 'Landfill Waste (Zero)', isZero: true },
+  { value: 0, suffix: '', label: 'Landfill Waste & Liquid Discharge', isZero: true },
 ];
 
 export default function StrategicImpact() {
@@ -70,7 +70,7 @@ export default function StrategicImpact() {
         section="STRATEGIC IMPACT"
         title="SECURING AMERICA'S"
         highlight="ENERGY FUTURE"
-        description="Building critical infrastructure for domestic battery supply chain independence."
+        description="Building critical infrastructure for domestic battery supply chain independence in Bryan County, Oklahoma."
       />
 
       {/* Impact Metrics Bar */}
