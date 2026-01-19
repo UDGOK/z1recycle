@@ -441,35 +441,102 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Process steps with connecting line */}
+          {/* Process steps with animated flowing line */}
           <div className="relative">
-            {/* Connecting line */}
-            <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-neon/30 to-transparent hidden md:block" />
+            {/* Static base line */}
+            <div className="absolute top-8 left-[10%] right-[10%] h-0.5 bg-slate-700/50 hidden md:block" />
+            
+            {/* Animated flowing energy pulse */}
+            <div className="absolute top-8 left-[10%] right-[10%] h-0.5 hidden md:block overflow-hidden">
+              <motion.div
+                className="h-full w-1/4 bg-gradient-to-r from-transparent via-neon to-transparent"
+                animate={{ x: ['-100%', '500%'] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                style={{ boxShadow: '0 0 20px #00ff88, 0 0 40px #00ff88' }}
+              />
+            </div>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
               {[
-                { step: '01', label: 'COLLECT', icon: 'C' },
-                { step: '02', label: 'DISCHARGE', icon: 'D' },
-                { step: '03', label: 'SHRED', icon: 'S' },
-                { step: '04', label: 'SEPARATE', icon: 'M' },
-                { step: '05', label: 'RECOVER', icon: 'R' },
+                { step: '01', label: 'COLLECT', icon: '📦' },
+                { step: '02', label: 'DISCHARGE', icon: '⚡' },
+                { step: '03', label: 'SHRED', icon: '⚙️' },
+                { step: '04', label: 'SEPARATE', icon: '🔬' },
+                { step: '05', label: 'RECOVER', icon: '♻️' },
               ].map((item, index) => (
                 <motion.div
                   key={item.step}
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.15, type: 'spring' }}
-                  className="flex flex-col items-center group"
+                  transition={{ delay: index * 0.2, type: 'spring', stiffness: 200 }}
+                  className="flex flex-col items-center group relative"
                 >
+                  {/* Arrow connector (except for last item) */}
+                  {index < 4 && (
+                    <motion.div 
+                      className="hidden md:block absolute left-full top-8 -translate-y-1/2 ml-1"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.2 + 0.3 }}
+                    >
+                      <svg width="24" height="12" className="text-neon/50">
+                        <path d="M0 6 L18 6 M14 2 L18 6 L14 10" stroke="currentColor" strokeWidth="2" fill="none"/>
+                      </svg>
+                    </motion.div>
+                  )}
+                  
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-full border-2 border-neon/50 group-hover:border-neon flex items-center justify-center font-mono text-xl text-neon bg-slate-950 transition-all group-hover:shadow-[0_0_20px_rgba(0,255,136,0.3)]">
+                    {/* Glowing ring animation */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full border-2 border-neon"
+                      animate={{ 
+                        scale: [1, 1.3, 1],
+                        opacity: [0.5, 0, 0.5]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        delay: index * 0.4,
+                        repeat: Infinity,
+                        ease: 'easeOut'
+                      }}
+                    />
+                    
+                    {/* Main circle */}
+                    <motion.div 
+                      className="w-16 h-16 rounded-full border-2 border-neon/50 flex items-center justify-center text-2xl bg-slate-950 relative z-10"
+                      whileHover={{ 
+                        scale: 1.1,
+                        borderColor: '#00ff88',
+                        boxShadow: '0 0 30px rgba(0,255,136,0.5)'
+                      }}
+                      animate={{
+                        boxShadow: [
+                          '0 0 10px rgba(0,255,136,0.2)',
+                          '0 0 20px rgba(0,255,136,0.4)',
+                          '0 0 10px rgba(0,255,136,0.2)'
+                        ]
+                      }}
+                      transition={{
+                        boxShadow: {
+                          duration: 2,
+                          delay: index * 0.4,
+                          repeat: Infinity
+                        }
+                      }}
+                    >
                       {item.icon}
-                    </div>
-                    {/* Pulse effect */}
-                    <div className="absolute inset-0 rounded-full border-2 border-neon/30 animate-ping opacity-0 group-hover:opacity-100" style={{ animationDuration: '2s' }} />
+                    </motion.div>
                   </div>
-                  <div className="font-mono text-xs text-cyan-400/50 mt-2">{item.step}</div>
+                  
+                  <motion.div 
+                    className="font-mono text-xs text-cyan-400/50 mt-2"
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 2, delay: index * 0.4, repeat: Infinity }}
+                  >
+                    {item.step}
+                  </motion.div>
                   <div className="font-mono text-sm text-white">{item.label}</div>
                 </motion.div>
               ))}
