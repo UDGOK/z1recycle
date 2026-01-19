@@ -47,11 +47,11 @@ const pillars = [
     stat: 3,
     statSuffix: '',
     statLabel: 'Bridging Lab to Market',
-    description: 'Pioneering next-generation battery technologies including sodium-ion R&D and commercial-scale manufacturing.',
+    description: 'Pioneering next-generation battery technologies with AI-driven quality control and commercial-scale manufacturing.',
     points: [
-      'Lithium-ion processing',
-      'Sodium-ion development',
-      'Emerging chemistry readiness',
+      'AI-optimized material sorting',
+      'Real-time composition analysis',
+      'Predictive maintenance systems',
     ],
   },
 ];
@@ -59,7 +59,7 @@ const pillars = [
 const impactMetrics = [
   { value: 10000, suffix: ' tons', label: 'Annual Processing Capacity' },
   { value: 60000, suffix: ' SF', label: 'Purpose-Built Facility' },
-  { value: 99, suffix: '%', label: 'Material Recovery Rate' },
+  { value: 99.5, suffix: '%+', label: 'Cathode Grade Purity' },
   { value: 0, suffix: '', label: 'Landfill Waste & Liquid Discharge', isZero: true },
 ];
 
@@ -179,8 +179,8 @@ export default function StrategicImpact() {
             <p className="text-slate-400 text-lg leading-relaxed mb-8">
               Z1 Recycling represents a new model for American critical materials infrastructure—combining 
               advanced recycling technology with next-generation battery R&D to create a complete domestic 
-              supply chain solution. Our facility transforms end-of-life batteries into high-purity materials 
-              for the next generation of energy storage.
+              supply chain solution. Our facility transforms end-of-life batteries into cathode-grade materials (>99.5% purity) 
+              ready for direct precursor resynthesis—emitting 70% less CO2 than virgin mining.
             </p>
             <div className="inline-flex items-center gap-2 font-mono text-sm text-neon">
               <span className="w-2 h-2 bg-neon rounded-full animate-pulse" />

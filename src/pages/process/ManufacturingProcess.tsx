@@ -18,8 +18,8 @@ const processSteps = [
   {
     step: 3,
     name: 'Drying',
-    description: 'Coated electrodes pass through multi-zone ovens to remove solvents.',
-    details: 'Temperature gradient from 80C to 120C. Solvent recovery system captures NMP. Residual moisture <50 ppm.',
+    description: 'Coated electrodes pass through multi-zone ovens with closed-loop solvent recovery.',
+    details: '95% solvent recovery rate reduces VOC emissions and operating costs. Temperature gradient 80C-120C. Residual moisture <50 ppm.',
   },
   {
     step: 4,
@@ -74,18 +74,19 @@ export default function ManufacturingProcess() {
         section="PROCESS // MANUFACTURING"
         title="MANUFACTURING"
         highlight="PROCESS"
-        description="Sodium-ion cell production from electrode coating to finished battery."
+        description="Sodium-ion cell production with dedicated material streams ensuring zero cross-contamination between Li-ion recovery and Na-ion manufacturing."
         image="/dry-room.png"
       />
 
       {/* Environment Requirements */}
       <section className="py-16 bg-cyan-950/20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { label: 'Dew Point', value: '-40C', icon: 'T' },
               { label: 'Humidity', value: '<1% RH', icon: 'H' },
               { label: 'ISO Class', value: '7', icon: 'C' },
+              { label: 'Solvent Recovery', value: '95%', icon: 'S' },
             ].map((item, index) => (
               <motion.div
                 key={item.label}

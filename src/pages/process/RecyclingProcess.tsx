@@ -36,8 +36,8 @@ const processSteps = [
   {
     step: 5,
     name: 'Air Classification',
-    description: 'Zig-zag classifier separates light materials (plastics, foils) from heavy materials.',
-    details: 'Light fraction sent to plastics recycler. Heavy fraction continues to magnetic separation. Efficiency exceeds 95%.',
+    description: 'AI-optimized zig-zag classifier with computer vision separates materials by composition.',
+    details: 'Sensor-based sorting with real-time material composition analysis. Light fraction to recycler, heavy to magnetic separation. AI achieves 98%+ yield.',
     icon: 'A',
   },
   {
@@ -57,8 +57,8 @@ const processSteps = [
   {
     step: 8,
     name: 'Black Mass Recovery',
-    description: 'The remaining electrode powder containing lithium, cobalt, nickel, and manganese is collected.',
-    details: 'Black mass is packaged in super sacks for shipment to hydrometallurgical refiners who extract individual metals.',
+    description: 'Cathode-grade electrode powder recovered via selective hydrometallurgical processing.',
+    details: 'Targeted extraction of Li, Co, Ni, Mn via closed-loop hydrometallurgy achieves >99.5% purity—ready for direct cathode precursor resynthesis without re-refining.',
     icon: 'R',
   },
 ];
@@ -191,7 +191,7 @@ export default function RecyclingProcess() {
               { material: 'Copper', destination: 'Metal Smelters', purity: '99%+', icon: 'Cu' },
               { material: 'Aluminum', destination: 'Recyclers', purity: '97%+', icon: 'Al' },
               { material: 'Steel', destination: 'Scrap Market', purity: '95%+', icon: 'Fe' },
-              { material: 'Black Mass', destination: 'Hydromet Refiners', purity: 'Li, Co, Ni, Mn', icon: 'BM' },
+              { material: 'Black Mass', destination: 'Cathode Precursor', purity: '>99.5% Purity', icon: 'BM' },
             ].map((item, index) => (
               <motion.div
                 key={item.material}
