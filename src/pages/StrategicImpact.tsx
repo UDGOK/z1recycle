@@ -179,7 +179,7 @@ export default function StrategicImpact() {
             <p className="text-slate-400 text-lg leading-relaxed mb-8">
               Z1 Recycling represents a new model for American critical materials infrastructure—combining 
               advanced recycling technology with next-generation battery R&D to create a complete domestic 
-              supply chain solution. Our facility transforms end-of-life batteries into cathode-grade materials (>99.5% purity) 
+              supply chain solution. Our facility transforms end-of-life batteries into cathode-grade materials (&gt;99.5% purity) 
               ready for direct precursor resynthesis—emitting 70% less CO2 than virgin mining.
             </p>
             <div className="inline-flex items-center gap-2 font-mono text-sm text-neon">
