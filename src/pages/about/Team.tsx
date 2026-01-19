@@ -121,24 +121,24 @@ function TeamCard({ member, onClick }: { member: TeamMember; onClick: () => void
     <motion.div
       whileHover={{ y: -4 }}
       onClick={onClick}
-      className="group cursor-pointer bg-slate-800/50 border border-slate-700 hover:border-neon/50 p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.15)]"
+      className="group cursor-pointer bg-slate-800/50 border border-slate-700 hover:border-neon/50 p-6 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.15)] h-[280px] flex flex-col"
     >
-      {/* Profile Circle */}
-      <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-neon/80 to-cyan-500/80 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-all">
+      {/* Profile Circle - Fixed size */}
+      <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-neon/80 to-cyan-500/80 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-all flex-shrink-0">
         <span className="font-mono text-xl text-white font-bold">{member.initials}</span>
       </div>
 
-      {/* Name & Title */}
-      <div className="text-center">
-        <h3 className="font-mono text-lg text-white mb-1 group-hover:text-neon transition-colors">
+      {/* Name & Title - Fixed height container */}
+      <div className="text-center flex-1 flex flex-col justify-center">
+        <h3 className="font-mono text-lg text-white mb-2 group-hover:text-neon transition-colors line-clamp-1">
           {member.name}
         </h3>
-        <p className="text-slate-400 text-sm">{member.title}</p>
+        <p className="text-slate-400 text-sm line-clamp-2 min-h-[40px]">{member.title}</p>
       </div>
 
-      {/* LinkedIn Icon */}
-      {member.linkedin && (
-        <div className="flex justify-center mt-4">
+      {/* Footer - Always at bottom */}
+      <div className="flex justify-center items-center h-8 mt-auto">
+        {member.linkedin ? (
           <a
             href={member.linkedin}
             target="_blank"
@@ -150,8 +150,10 @@ function TeamCard({ member, onClick }: { member: TeamMember; onClick: () => void
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
-        </div>
-      )}
+        ) : (
+          <span className="text-slate-600 text-xs font-mono tracking-wider">CLICK FOR BIO</span>
+        )}
+      </div>
     </motion.div>
   );
 }
