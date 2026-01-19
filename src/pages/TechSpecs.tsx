@@ -241,9 +241,12 @@ export default function TechSpecs() {
             >
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-neon/20 to-cyan-500/20 blur-lg opacity-50 group-hover:opacity-100 transition-opacity" />
-                <img
-                  src="/images/cobot-battery.jpg"
-                  alt="Collaborative robot handling battery cell in clean-room environment"
+                <video
+                  src="/images/cobot-video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="relative w-full border border-slate-700"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 to-transparent p-4">
