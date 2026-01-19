@@ -259,6 +259,218 @@ export default function ZoneB() {
           </div>
         </div>
       </section>
+
+      {/* Renewable Energy System */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h2 className="font-mono text-2xl md:text-3xl font-bold mb-4">
+              RENEWABLE <span className="text-neon">ENERGY SYSTEM</span>
+            </h2>
+            <p className="text-muted max-w-3xl">
+              Maximizing the 60,000 SF rooftop for on-site solar generation, integrated with 
+              lithium-ion battery storage for grid independence and operational resilience.
+            </p>
+          </motion.div>
+
+          {/* Solar Array Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              { value: '781', unit: 'kW', label: 'Solar Capacity' },
+              { value: '1,953', unit: '', label: 'Bifacial Panels' },
+              { value: '3.2', unit: 'MWh', label: 'Battery Storage' },
+              { value: '1.26M', unit: 'kWh/yr', label: 'Annual Generation' },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center p-6 border border-neon/30 bg-neon/5"
+              >
+                <div className="font-mono text-3xl text-neon">
+                  {stat.value}<span className="text-lg">{stat.unit}</span>
+                </div>
+                <div className="font-mono text-xs text-muted mt-1">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* System Architecture */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="border border-neon/30 p-6"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <svg className="w-8 h-8 text-neon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <div className="font-mono text-neon text-lg">SOLAR ARRAY</div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Panel Type</span>
+                  <span className="text-white">400W Bifacial Monocrystalline</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Configuration</span>
+                  <span className="text-white">1,953 Panels / 42,000 SF</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Mounting</span>
+                  <span className="text-white">Ballasted Flat Roof System</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Inverters</span>
+                  <span className="text-white">650 kW String Inverters</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted">Peak Sun Hours</span>
+                  <span className="text-white">5.2 hrs/day (Oklahoma avg)</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="border border-cyan-500/30 p-6"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <svg className="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.5 4v3M13.5 4v3M8 17v-6M12 17v-4M16 17v-2" />
+                </svg>
+                <div className="font-mono text-cyan-400 text-lg">BATTERY STORAGE</div>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Chemistry</span>
+                  <span className="text-white">Lithium Iron Phosphate (LFP)</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Capacity</span>
+                  <span className="text-white">3.2 MWh Usable</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Power Rating</span>
+                  <span className="text-white">800 kW Continuous</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-muted">Cycle Life</span>
+                  <span className="text-white">6,000+ Cycles (15+ Years)</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted">Configuration</span>
+                  <span className="text-white">Containerized Modules</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Environmental Benefits */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <h3 className="font-mono text-xl text-white mb-6">
+              ENVIRONMENTAL <span className="text-neon">IMPACT</span>
+            </h3>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: (
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+                value: '890',
+                unit: 'Metric Tons',
+                label: 'CO2 Avoided Annually',
+                description: 'Equivalent to removing 193 vehicles from the road each year',
+              },
+              {
+                icon: (
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  </svg>
+                ),
+                value: '14,700',
+                unit: 'Trees',
+                label: 'Carbon Offset Equivalent',
+                description: 'Annual carbon sequestration equivalent to planting a small forest',
+              },
+              {
+                icon: (
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
+                value: '18%',
+                unit: '',
+                label: 'Grid Independence',
+                description: 'Reducing strain on local utility infrastructure during peak demand',
+              },
+            ].map((benefit, index) => (
+              <motion.div
+                key={benefit.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-b from-neon/10 to-transparent border border-neon/20 p-6"
+              >
+                <div className="text-neon mb-4">{benefit.icon}</div>
+                <div className="font-mono text-3xl text-white mb-1">
+                  {benefit.value}<span className="text-neon text-lg ml-1">{benefit.unit}</span>
+                </div>
+                <div className="font-mono text-sm text-neon mb-2">{benefit.label}</div>
+                <p className="text-muted text-sm">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Operational Benefits */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-slate-900/50 border border-neon/20 p-8"
+          >
+            <h3 className="font-mono text-lg text-white mb-6">OPERATIONAL ADVANTAGES</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'Peak Shaving', desc: 'Reduce demand charges by discharging batteries during high-cost periods' },
+                { title: 'Grid Resilience', desc: 'Seamless transition to battery power during utility outages' },
+                { title: 'Self-Consumption', desc: 'Store daytime solar generation for evening production shifts' },
+                { title: 'Demand Response', desc: 'Participate in utility programs for additional revenue streams' },
+              ].map((item) => (
+                <div key={item.title} className="flex gap-3">
+                  <div className="w-2 h-2 bg-neon rounded-full mt-2 flex-shrink-0" />
+                  <div>
+                    <div className="font-mono text-sm text-neon mb-1">{item.title}</div>
+                    <p className="text-muted text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 }
