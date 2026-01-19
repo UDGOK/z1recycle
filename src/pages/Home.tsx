@@ -180,40 +180,11 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Animated Logo Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, type: 'spring', stiffness: 100, damping: 15 }}
-              className="relative mx-auto mb-8 w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
-            >
-              {/* Outer glow rings */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon/20 to-cyan-500/20 blur-xl animate-pulse" />
-              <div className="absolute -inset-4 rounded-full border border-neon/10 animate-[spin_20s_linear_infinite]" />
-              <div className="absolute -inset-8 rounded-full border border-cyan-500/5 animate-[spin_30s_linear_infinite_reverse]" />
-              
-              {/* Video container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden shadow-[0_0_60px_rgba(0,255,136,0.3)]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                >
-                  <source src="/logo-animation.mp4" type="video/mp4" />
-                </video>
-              </div>
-              
-              {/* Inner glow */}
-              <div className="absolute inset-0 rounded-full shadow-[inset_0_0_30px_rgba(0,255,136,0.2)] pointer-events-none" />
-            </motion.div>
-
             {/* Location tag */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.3 }}
               className="font-mono text-xs text-cyan-400/70 mb-6 tracking-widest"
             >
               [ DURANT, OKLAHOMA // LAT 33.9937 LONG -96.3706 ]
@@ -224,7 +195,7 @@ export default function Home() {
               <motion.span 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.5 }}
                 className="text-white"
               >
                 SECURING AMERICA'S{' '}
@@ -232,12 +203,36 @@ export default function Home() {
               <motion.span 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.0, type: 'spring' }}
+                transition={{ delay: 0.8, type: 'spring' }}
                 className="text-neon glow-text"
               >
                 ENERGY FUTURE
               </motion.span>
             </h1>
+
+            {/* Animated Logo Badge - Now between headline and tagline */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.0, type: 'spring', stiffness: 100, damping: 15 }}
+              className="relative mx-auto my-8 w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56"
+            >
+              {/* Outer glow - no ring */}
+              <div className="absolute inset-0 bg-gradient-to-r from-neon/30 to-cyan-500/30 blur-2xl animate-pulse" />
+              
+              {/* Video container - square with glow, no circular mask */}
+              <div className="relative w-full h-full overflow-hidden shadow-[0_0_80px_rgba(0,255,136,0.4)]">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-contain"
+                >
+                  <source src="/logo-animation.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </motion.div>
             
             <motion.p 
               initial={{ opacity: 0 }}
