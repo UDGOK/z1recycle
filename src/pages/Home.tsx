@@ -180,11 +180,40 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            {/* Animated Logo Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 100, damping: 15 }}
+              className="relative mx-auto mb-8 w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64"
+            >
+              {/* Outer glow rings */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon/20 to-cyan-500/20 blur-xl animate-pulse" />
+              <div className="absolute -inset-4 rounded-full border border-neon/10 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute -inset-8 rounded-full border border-cyan-500/5 animate-[spin_30s_linear_infinite_reverse]" />
+              
+              {/* Video container */}
+              <div className="relative w-full h-full rounded-full overflow-hidden shadow-[0_0_60px_rgba(0,255,136,0.3)]">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/logo-animation.mp4" type="video/mp4" />
+                </video>
+              </div>
+              
+              {/* Inner glow */}
+              <div className="absolute inset-0 rounded-full shadow-[inset_0_0_30px_rgba(0,255,136,0.2)] pointer-events-none" />
+            </motion.div>
+
             {/* Location tag */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.5 }}
               className="font-mono text-xs text-cyan-400/70 mb-6 tracking-widest"
             >
               [ DURANT, OKLAHOMA // LAT 33.9937 LONG -96.3706 ]
@@ -195,7 +224,7 @@ export default function Home() {
               <motion.span 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.7 }}
                 className="text-white"
               >
                 SECURING AMERICA'S{' '}
@@ -203,7 +232,7 @@ export default function Home() {
               <motion.span 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.8, type: 'spring' }}
+                transition={{ delay: 1.0, type: 'spring' }}
                 className="text-neon glow-text"
               >
                 ENERGY FUTURE
@@ -213,7 +242,7 @@ export default function Home() {
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
+              transition={{ delay: 1.3 }}
               className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 text-xl md:text-2xl mb-10 font-mono"
             >
               DOMESTIC CRITICAL MATERIALS INFRASTRUCTURE
@@ -223,13 +252,13 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5 }}
+              transition={{ delay: 1.6 }}
               className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12"
             >
               {[
                 { end: 60000, suffix: ' SF', label: 'TOTAL AREA', delay: 0 },
-                { end: 32, suffix: "'", label: 'CLEAR HEIGHT', delay: 0.2 },
-                { end: 3, suffix: '', label: 'ZONES', delay: 0.4 },
+                { end: 32, suffix: "'", label: 'CLEAR HEIGHT', delay: 0.1 },
+                { end: 3, suffix: '', label: 'ZONES', delay: 0.2 },
               ].map((stat) => (
                 <motion.div
                   key={stat.label}
@@ -250,7 +279,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2.2 }}
+              transition={{ delay: 2.0 }}
               className="flex flex-wrap justify-center gap-4"
             >
               <Link
