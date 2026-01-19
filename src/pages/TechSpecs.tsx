@@ -184,24 +184,7 @@ export default function TechSpecs() {
         </div>
       </section>
 
-      {/* Dr. Kim Quote */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="border-l-4 border-neon pl-8 py-4"
-          >
-            <p className="text-xl text-slate-300 italic mb-4">
-              "Your site currently sells a factory. You need to sell a laboratory on an industrial scale. 
-              The grants are not looking for a place where batteries are smashed; they are looking for 
-              a place where the atom-level chemistry is controlled to secure the nation's future."
-            </p>
-            <div className="font-mono text-sm text-neon">— Technical Advisory Review</div>
-          </motion.div>
-        </div>
-      </section>
+
     </>
   );
 }
