@@ -184,6 +184,76 @@ export default function TechSpecs() {
         </div>
       </section>
 
+      {/* Industry 5.0: Human-Robot Collaboration */}
+      <section className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="font-mono text-xs text-cyan-400 tracking-widest mb-2">// NEXT-GEN AUTOMATION</div>
+            <h2 className="font-mono text-3xl md:text-4xl font-bold mb-4">
+              INDUSTRY 5.0: <span className="text-neon">HUMAN-ROBOT COLLABORATION</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <p className="text-slate-300 text-lg mb-6">
+                Our facility integrates collaborative robots (cobots) that work alongside human experts for high-precision tasks including battery cell placement, electrode alignment, and real-time quality inspection.
+              </p>
+              <p className="text-slate-400 mb-8">
+                This human-machine partnership represents the next evolution in manufacturing—combining the adaptability and decision-making of skilled technicians with the repeatability and precision of robotic systems.
+              </p>
+
+              <div className="grid grid-cols-3 gap-4">
+                <div className="border border-neon/30 p-4 text-center">
+                  <div className="font-mono text-2xl text-neon mb-1">+40%</div>
+                  <div className="font-mono text-xs text-slate-500">THROUGHPUT</div>
+                </div>
+                <div className="border border-cyan-500/30 p-4 text-center">
+                  <div className="font-mono text-2xl text-cyan-400 mb-1">ZERO</div>
+                  <div className="font-mono text-xs text-slate-500">INJURIES</div>
+                </div>
+                <div className="border border-neon/30 p-4 text-center">
+                  <div className="font-mono text-2xl text-neon mb-1">&lt;2hr</div>
+                  <div className="font-mono text-xs text-slate-500">REPROGRAM</div>
+                </div>
+              </div>
+
+              <p className="text-slate-500 text-sm mt-6">
+                Rapid reprogramming capability allows seamless transitions between Li-ion and Na-ion cell chemistries without production downtime.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 lg:order-2"
+            >
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-neon/20 to-cyan-500/20 blur-lg opacity-50 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src="/images/cobot-battery.jpg"
+                  alt="Collaborative robot handling battery cell in clean-room environment"
+                  className="relative w-full border border-slate-700"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 to-transparent p-4">
+                  <div className="font-mono text-xs text-cyan-400">COBOT_CELL_ASSEMBLY_01</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
     </>
   );
