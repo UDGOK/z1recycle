@@ -10,7 +10,7 @@ export default function Footer() {
               Z1<span className="text-white">_RECYCLING</span>
             </Link>
             <p className="text-muted text-sm mt-4">
-              State-of-the-art lithium-ion recycling and sodium-ion R&D facility in Durant, Oklahoma.
+              State-of-the-art lithium-ion recycling and sodium-ion R&D facility in Mead, Oklahoma.
             </p>
           </div>
           
@@ -45,10 +45,10 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-muted/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-mono text-xs text-muted">
-            [ 2026 Z1 RECYCLING CENTER // DURANT, OKLAHOMA ]
+            [ 2026 Z1 RECYCLING CENTER // MEAD, OKLAHOMA ]
           </div>
           <div className="font-mono text-xs text-muted/50">
-            LAT 33.9937 LONG -96.3706
+            LAT 33.9967 LONG -96.5122
           </div>
         </div>
       </div>

@@ -187,7 +187,7 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               className="font-mono text-xs text-cyan-400/70 mb-6 tracking-widest"
             >
-              [ DURANT, OKLAHOMA // LAT 33.9937 LONG -96.3706 ]
+              [ 8460 US 70, MEAD OK 73449 // LAT 33.9967 LONG -96.5122 ]
             </motion.div>
 
             {/* Main headline */}

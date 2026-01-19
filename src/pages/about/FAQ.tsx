@@ -20,11 +20,11 @@ const faqData: FAQCategory[] = [
     items: [
       {
         question: 'What is Z1 Recycling Center?',
-        answer: 'Z1 Recycling Center is a 60,000 SF state-of-the-art facility in Durant, Oklahoma dedicated to lithium-ion battery recycling and sodium-ion battery research and development. We recover valuable materials from end-of-life batteries and use them to manufacture next-generation energy storage solutions.',
+        answer: 'Z1 Recycling Center is a 60,000 SF state-of-the-art facility in Mead, Oklahoma dedicated to lithium-ion battery recycling and sodium-ion battery research and development. We recover valuable materials from end-of-life batteries and use them to manufacture next-generation energy storage solutions.',
       },
       {
         question: 'Where is the facility located?',
-        answer: 'The facility is located in Bryan County, Durant, Oklahoma (coordinates: LAT 33.9937, LONG -96.3706). Durant was selected for its proximity to major transportation routes, favorable business climate, and skilled workforce.',
+        answer: 'The facility is located at 8460 US 70, Mead, Oklahoma 73449 (coordinates: LAT 33.9967, LONG -96.5122). This location was selected for its proximity to major transportation routes, favorable business climate, and skilled workforce.',
       },
       {
         question: 'When will the facility be operational?',

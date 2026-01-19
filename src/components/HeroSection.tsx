@@ -179,7 +179,7 @@ export default function HeroSection() {
         >
           {/* Technical annotation */}
           <div className="font-mono text-xs text-muted mb-4 tracking-widest">
-            [ DURANT, OKLAHOMA // LAT 33.9937 LONG -96.3706 ]
+            [ 8460 US 70, MEAD OK 73449 // LAT 33.9967 LONG -96.5122 ]
           </div>
 
           <h1 className="font-mono text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">

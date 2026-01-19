@@ -34,7 +34,7 @@ export default function Footer() {
           className="mt-8 pt-8 border-t border-muted/10 text-center"
         >
           <div className="font-mono text-xs text-muted/50">
-            CLOSING THE LOOP // DURANT, OKLAHOMA // LAT 33.9937 LONG -96.3706
+            CLOSING THE LOOP // 8460 US 70, MEAD OK 73449 // LAT 33.9967 LONG -96.5122
           </div>
         </motion.div>
       </div>

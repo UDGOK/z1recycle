@@ -135,11 +135,11 @@ export default function ContactSection() {
             {/* Location */}
             <div className="border border-neon/20 p-6">
               <div className="font-mono text-xs text-amber mb-2">// LOCATION</div>
-              <div className="font-mono text-xl text-white mb-2">Durant, Oklahoma</div>
+              <div className="font-mono text-xl text-white mb-2">8460 US 70, Mead OK 73449</div>
               <div className="text-muted text-sm">
                 Bryan County Industrial District<br />
                 60,000 SF Purpose-Built Facility<br />
-                LAT 33.9937 / LONG -96.3706
+                LAT 33.9967 / LONG -96.5122
               </div>
             </div>
 
