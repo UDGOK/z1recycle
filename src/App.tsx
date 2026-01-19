@@ -1,0 +1,56 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+
+// Pages
+import Home from './pages/Home';
+import FacilityOverview from './pages/facility/FacilityOverview';
+import ZoneA from './pages/facility/ZoneA';
+import ZoneB from './pages/facility/ZoneB';
+import ZoneC from './pages/facility/ZoneC';
+import RecyclingProcess from './pages/process/RecyclingProcess';
+import ManufacturingProcess from './pages/process/ManufacturingProcess';
+import EquipmentGuide from './pages/process/EquipmentGuide';
+import Sustainability from './pages/Sustainability';
+import StrategicImpact from './pages/StrategicImpact';
+import Timeline from './pages/about/Timeline';
+import FAQ from './pages/about/FAQ';
+import Contact from './pages/about/Contact';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          {/* Home */}
+          <Route path="/" element={<Home />} />
+          
+          {/* Strategic Impact */}
+          <Route path="/strategic-impact" element={<StrategicImpact />} />
+          
+          {/* Facility */}
+          <Route path="/facility" element={<FacilityOverview />} />
+          <Route path="/facility/zone-a" element={<ZoneA />} />
+          <Route path="/facility/zone-b" element={<ZoneB />} />
+          <Route path="/facility/zone-c" element={<ZoneC />} />
+          
+          {/* Process */}
+          <Route path="/process" element={<RecyclingProcess />} />
+          <Route path="/process/recycling" element={<RecyclingProcess />} />
+          <Route path="/process/manufacturing" element={<ManufacturingProcess />} />
+          <Route path="/process/equipment" element={<EquipmentGuide />} />
+          
+          {/* Sustainability */}
+          <Route path="/sustainability" element={<Sustainability />} />
+          
+          {/* About */}
+          <Route path="/about" element={<Timeline />} />
+          <Route path="/about/timeline" element={<Timeline />} />
+          <Route path="/about/faq" element={<FAQ />} />
+          <Route path="/about/contact" element={<Contact />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+}
+
+export default App;
