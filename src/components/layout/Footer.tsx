@@ -47,8 +47,13 @@ export default function Footer() {
           <div className="font-mono text-xs text-muted">
             [ 2026 Z1 RECYCLING CENTER // MEAD, OKLAHOMA ]
           </div>
-          <div className="font-mono text-xs text-muted/50">
-            LAT 33.9967 LONG -96.5122
+          <div className="flex items-center gap-6">
+            <Link to="/terms" className="font-mono text-xs text-muted hover:text-neon transition-colors">
+              Terms of Service
+            </Link>
+            <div className="font-mono text-xs text-muted/50">
+              LAT 33.9967 LONG -96.5122
+            </div>
           </div>
         </div>
       </div>

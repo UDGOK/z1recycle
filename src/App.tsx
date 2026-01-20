@@ -18,6 +18,7 @@ import Timeline from './pages/about/Timeline';
 import FAQ from './pages/about/FAQ';
 import Team from './pages/about/Team';
 import Contact from './pages/about/Contact';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
           <Route path="/about/team" element={<Team />} />
           <Route path="/about/faq" element={<FAQ />} />
           <Route path="/about/contact" element={<Contact />} />
+          
+          {/* Legal */}
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </Layout>
     </BrowserRouter>
