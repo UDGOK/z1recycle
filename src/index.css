@@ -24,6 +24,11 @@
   * {
     cursor: none;
   }
+
+  /* Force all videos to be muted site-wide */
+  video {
+    pointer-events: none;
+  }
 }
 
 @layer components {

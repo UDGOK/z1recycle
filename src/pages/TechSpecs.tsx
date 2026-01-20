@@ -247,7 +247,13 @@ export default function TechSpecs() {
                   loop
                   muted
                   playsInline
-                  className="relative w-full border border-slate-700"
+                  controls={false}
+                  className="relative w-full border border-slate-700 pointer-events-none"
+                  onLoadedData={(e) => {
+                    const video = e.currentTarget;
+                    video.muted = true;
+                    video.volume = 0;
+                  }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 to-transparent p-4">
                   <div className="font-mono text-xs text-cyan-400">COBOT_CELL_ASSEMBLY_01</div>
