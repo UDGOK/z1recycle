@@ -83,9 +83,15 @@ export default function ZoneA() {
           <div className="relative">
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-neon/20 -translate-y-1/2 hidden md:block" />
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {['INTAKE', 'DISCHARGE', 'SHRED', 'SEPARATE', 'PACKAGE'].map((step, index) => (
+              {[
+                { step: 'INTAKE', desc: 'Receive & classify EoL batteries' },
+                { step: 'DISCHARGE', desc: 'Safe voltage depletion to <1V' },
+                { step: 'SHRED', desc: 'N2 atmosphere size reduction' },
+                { step: 'SEPARATE', desc: 'Magnetic & optical sorting' },
+                { step: 'PACKAGE', desc: 'Black mass sealed for transport' },
+              ].map((item, index) => (
                 <motion.div
-                  key={step}
+                  key={item.step}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -95,7 +101,8 @@ export default function ZoneA() {
                   <div className="w-12 h-12 rounded-full bg-slate-950 border-2 border-neon flex items-center justify-center font-mono text-neon z-10">
                     {index + 1}
                   </div>
-                  <div className="font-mono text-xs text-white mt-2">{step}</div>
+                  <div className="font-mono text-xs text-white mt-2">{item.step}</div>
+                  <div className="font-mono text-[10px] text-slate-400 mt-1 text-center max-w-[100px]">{item.desc}</div>
                 </motion.div>
               ))}
             </div>
@@ -132,7 +139,8 @@ export default function ZoneA() {
                 loop
                 muted
                 playsInline
-                className="w-full h-auto"
+                controls={false}
+                className="w-full h-auto pointer-events-none"
               />
               {/* Watermark cover */}
               <div className="absolute bottom-0 right-0 w-32 h-16 bg-slate-950" />
