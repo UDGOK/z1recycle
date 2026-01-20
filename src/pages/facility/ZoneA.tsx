@@ -103,6 +103,45 @@ export default function ZoneA() {
         </div>
       </section>
 
+      {/* Processing Video */}
+      <section className="py-24 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <div className="font-mono text-xs text-cyan-400 tracking-widest mb-2">// LIVE OPERATIONS</div>
+            <h2 className="font-mono text-2xl md:text-3xl font-bold mb-4">
+              PROCESSING <span className="text-neon">IN ACTION</span>
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-neon/20 to-cyan-500/20 blur-lg opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="relative overflow-hidden border border-slate-700">
+              <video
+                src="/images/processing-video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto"
+              />
+              {/* Watermark cover */}
+              <div className="absolute bottom-0 right-0 w-24 h-12 bg-gradient-to-tl from-slate-900 via-slate-900 to-transparent" />
+              <div className="absolute bottom-2 right-2 font-mono text-xs text-neon/70">Z1 RECYCLING</div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Equipment Table */}
       <section className="py-24 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-6">
