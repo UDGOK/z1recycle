@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PageHeader from '../../components/ui/PageHeader';
 import DataTable from '../../components/ui/DataTable';
 
@@ -27,6 +27,14 @@ const safetyFeatures = [
 
 export default function ZoneA() {
   const [expandedInfo, setExpandedInfo] = useState<string | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.volume = 0;
+    }
+  }, []);
 
   return (
     <>
@@ -134,6 +142,7 @@ export default function ZoneA() {
             <div className="absolute -inset-1 bg-gradient-to-r from-neon/20 to-cyan-500/20 blur-lg opacity-50 group-hover:opacity-100 transition-opacity" />
             <div className="relative overflow-hidden border border-slate-700">
               <video
+                ref={videoRef}
                 src="/images/processing-video.mp4"
                 autoPlay
                 loop
@@ -141,6 +150,11 @@ export default function ZoneA() {
                 playsInline
                 controls={false}
                 className="w-full h-auto pointer-events-none"
+                onLoadedData={(e) => {
+                  const video = e.currentTarget;
+                  video.muted = true;
+                  video.volume = 0;
+                }}
               />
               {/* Watermark cover */}
               <div className="absolute bottom-0 right-0 w-32 h-16 bg-slate-950" />
