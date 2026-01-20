@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/layout/Layout';
 
 // Pages
@@ -20,6 +21,7 @@ import Contact from './pages/about/Contact';
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <Layout>
         <Routes>
@@ -54,6 +56,8 @@ function App() {
         </Routes>
       </Layout>
     </BrowserRouter>
+    <Analytics />
+  </>
   );
 }
 
