@@ -135,8 +135,9 @@ export default function ZoneA() {
                 className="w-full h-auto"
               />
               {/* Watermark cover */}
-              <div className="absolute bottom-0 right-0 w-24 h-12 bg-gradient-to-tl from-slate-900 via-slate-900 to-transparent" />
-              <div className="absolute bottom-2 right-2 font-mono text-xs text-neon/70">Z1 RECYCLING</div>
+              <div className="absolute bottom-0 right-0 w-32 h-16 bg-slate-950" />
+              <div className="absolute bottom-0 right-0 w-32 h-16 bg-gradient-to-r from-neon/10 to-neon/5 border-t border-l border-neon/30" />
+              <div className="absolute bottom-3 right-3 font-mono text-xs text-neon font-bold tracking-wider">Z1 RECYCLING</div>
             </div>
           </motion.div>
         </div>
