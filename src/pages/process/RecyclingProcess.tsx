@@ -58,16 +58,16 @@ const processSteps = [
     step: 8,
     name: 'Black Mass Recovery',
     description: 'Cathode-grade electrode powder recovered via selective hydrometallurgical processing.',
-    details: 'Targeted extraction of Li, Co, Ni, Mn via closed-loop hydrometallurgy achieves >99.5% purity—ready for direct cathode precursor resynthesis without re-refining.',
+    details: 'Targeted extraction of Li, Co, Ni, Mn via closed-loop hydrometallurgy achieves >98% purity—ready for direct cathode precursor resynthesis.',
     icon: 'R',
   },
 ];
 
 const recoveryStats = [
-  { material: 'Copper', rate: 99, color: '#ff7b00' },
-  { material: 'Aluminum', rate: 98, color: '#c0c0c0' },
-  { material: 'Steel', rate: 99, color: '#6b7280' },
-  { material: 'Black Mass', rate: 95, color: '#1f2937' },
+  { material: 'Copper', rate: 97, color: '#ff7b00' },
+  { material: 'Aluminum', rate: 95, color: '#c0c0c0' },
+  { material: 'Steel', rate: 95, color: '#6b7280' },
+  { material: 'Black Mass', rate: 98, color: '#1f2937' },
 ];
 
 export default function RecyclingProcess() {
@@ -91,10 +91,10 @@ export default function RecyclingProcess() {
               <div className="w-3 h-3 bg-neon rounded-full shadow-[0_0_10px_#00ff88] animate-pulse" />
             </div>
             <div>
-              <div className="font-mono text-sm text-neon mb-1">IRA SECTION 30D COMPLIANT</div>
+              <div className="font-mono text-sm text-neon mb-1">DESIGNED TO SUPPORT IRA SECTION 30D</div>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Our feedstock sourcing and chain-of-custody protocols adhere strictly to IRA Section 30D guidelines, 
-                ensuring zero material leakage to or from Foreign Entities of Concern.
+                Our feedstock sourcing and chain-of-custody protocols are designed to help customers meet 
+                Section 30D FEOC restrictions, with full traceability ensuring no material leakage to or from Foreign Entities of Concern.
               </p>
             </div>
           </div>
@@ -206,10 +206,10 @@ export default function RecyclingProcess() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { material: 'Copper', destination: 'Metal Smelters', purity: '99%+', icon: 'Cu' },
-              { material: 'Aluminum', destination: 'Recyclers', purity: '97%+', icon: 'Al' },
+              { material: 'Copper', destination: 'Metal Smelters', purity: '97%+', icon: 'Cu' },
+              { material: 'Aluminum', destination: 'Recyclers', purity: '95%+', icon: 'Al' },
               { material: 'Steel', destination: 'Scrap Market', purity: '95%+', icon: 'Fe' },
-              { material: 'Black Mass', destination: 'Cathode Precursor', purity: '>99.5% Purity', icon: 'BM' },
+              { material: 'Black Mass', destination: 'Cathode Precursor', purity: '>98% Purity', icon: 'BM' },
             ].map((item, index) => (
               <motion.div
                 key={item.material}

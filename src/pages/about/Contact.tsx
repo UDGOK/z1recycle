@@ -42,7 +42,7 @@ export default function Contact() {
                 <div className="w-3 h-3 rounded-full bg-red-500" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="font-mono text-xs text-muted ml-4">contact@z1recycling.terminal</span>
+                <span className="font-mono text-xs text-muted ml-4">secure_form.sys</span>
               </div>
 
               <form onSubmit={handleSubmit} className="p-6 space-y-4">
