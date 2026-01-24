@@ -69,7 +69,7 @@ export default function ZoneC() {
         title="ZONE C"
         highlight="MANUFACTURING"
         description="28,000 SF positive pressure clean room for sodium-ion battery R&D and production."
-        image="/dry-room.png"
+        image="/dry-room.webp"
       />
 
       {/* Zone Stats */}

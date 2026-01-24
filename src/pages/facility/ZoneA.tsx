@@ -43,7 +43,7 @@ export default function ZoneA() {
         title="ZONE A"
         highlight="RECYCLING"
         description="28,000 SF negative pressure environment for safe lithium-ion battery processing."
-        image="/recycling-area.png"
+        image="/recycling-area.webp"
       />
 
       {/* Zone Stats */}

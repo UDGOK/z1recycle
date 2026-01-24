@@ -80,7 +80,7 @@ export default function RecyclingProcess() {
         title="DOMESTIC MATERIALS"
         highlight="PROCESSING"
         description="Domestic critical materials processing infrastructure for complete lithium-ion battery recycling."
-        image="/recycling-area.png"
+        image="/recycling-area.webp"
       />
 
       {/* FEOC Compliance Banner */}

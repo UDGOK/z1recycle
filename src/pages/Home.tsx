@@ -122,10 +122,10 @@ function ImageModal({ src, alt, onClose }: { src: string; alt: string; onClose: 
 }
 
 const facilityImages = [
-  { src: '/isometric-overview.png', alt: 'Facility Overview', zone: 'ALL ZONES' },
-  { src: '/recycling-area.png', alt: 'Zone A - Recycling', zone: 'ZONE A' },
-  { src: '/utility-spine.png', alt: 'Zone B - Utility', zone: 'ZONE B' },
-  { src: '/dry-room.png', alt: 'Zone C - Manufacturing', zone: 'ZONE C' },
+  { src: '/isometric-overview.webp', alt: 'Facility Overview', zone: 'ALL ZONES' },
+  { src: '/recycling-area.webp', alt: 'Zone A - Recycling', zone: 'ZONE A' },
+  { src: '/utility-spine.webp', alt: 'Zone B - Utility', zone: 'ZONE B' },
+  { src: '/dry-room.webp', alt: 'Zone C - Manufacturing', zone: 'ZONE C' },
 ];
 
 const quickLinks = [
@@ -161,7 +161,7 @@ export default function Home() {
         >
           <div 
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url(/facility-overview.png)' }}
+            style={{ backgroundImage: 'url(/facility-overview.webp)' }}
           />
           {/* Gradient overlay - green/cyan tones */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950" />
@@ -355,6 +355,7 @@ export default function Home() {
                   <img 
                     src={img.src} 
                     alt={img.alt}
+                    loading="lazy"
                     className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   {/* Overlay gradient */}
@@ -548,7 +549,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="relative group cursor-pointer mx-auto max-w-5xl"
-            onClick={() => setSelectedImage({ src: '/z1-journey.png', alt: 'Z1 Battery Recycling Process Journey', zone: 'Process Overview' })}
+            onClick={() => setSelectedImage({ src: '/z1-journey.webp', alt: 'Z1 Battery Recycling Process Journey', zone: 'Process Overview' })}
           >
             {/* Outer glow effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-neon/20 via-cyan-500/20 to-neon/20 rounded-lg blur-sm group-hover:blur-md transition-all duration-300" />
@@ -569,8 +570,9 @@ export default function Home() {
               {/* Image container */}
               <div className="relative p-4">
                 <img
-                  src="/z1-journey.png"
+                  src="/z1-journey.webp"
                   alt="Z1 Battery Recycling Process Journey"
+                  loading="lazy"
                   className="w-full h-auto rounded group-hover:scale-[1.01] transition-transform duration-300"
                 />
                 

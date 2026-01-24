@@ -28,7 +28,7 @@ export default function ZoneB() {
         title="ZONE B"
         highlight="UTILITY SPINE"
         description="4,000 SF central corridor housing MEP systems, fire separation, and ZLD processing."
-        image="/utility-spine.png"
+        image="/utility-spine.webp"
       />
 
       {/* Zone Stats */}

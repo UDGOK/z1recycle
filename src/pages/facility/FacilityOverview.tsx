@@ -30,7 +30,7 @@ export default function FacilityOverview() {
         title="FACILITY"
         highlight="OVERVIEW"
         description="60,000 SF domestic critical materials infrastructure for complete battery lifecycle management."
-        image="/facility-overview.png"
+        image="/facility-overview.webp"
       />
 
       {/* Interactive Isometric View */}
@@ -52,8 +52,9 @@ export default function FacilityOverview() {
             {/* Isometric Image with Hotspots */}
             <div className="relative bg-slate-900/50 border border-neon/20 rounded-lg overflow-hidden">
               <img 
-                src="/isometric-overview.png" 
+                src="/isometric-overview.webp" 
                 alt="Facility Overview" 
+                loading="lazy"
                 className="w-full h-auto opacity-90"
               />
               

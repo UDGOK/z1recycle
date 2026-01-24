@@ -75,7 +75,7 @@ export default function ManufacturingProcess() {
         title="MANUFACTURING"
         highlight="PROCESS"
         description="Sodium-ion cell production with dedicated material streams ensuring zero cross-contamination between Li-ion recovery and Na-ion manufacturing."
-        image="/dry-room.png"
+        image="/dry-room.webp"
       />
 
       {/* Environment Requirements */}
