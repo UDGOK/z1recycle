@@ -19,6 +19,7 @@ import FAQ from './pages/about/FAQ';
 import Team from './pages/about/Team';
 import Contact from './pages/about/Contact';
 import TermsOfService from './pages/TermsOfService';
+import Community from './pages/Community';
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
           
           {/* Sustainability */}
           <Route path="/sustainability" element={<Sustainability />} />
+          
+          {/* Community */}
+          <Route path="/community" element={<Community />} />
           
           {/* About */}
           <Route path="/about" element={<Timeline />} />

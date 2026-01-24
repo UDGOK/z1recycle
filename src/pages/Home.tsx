@@ -180,6 +180,27 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            {/* Compliance Badges */}
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-wrap items-center justify-center gap-3 md:gap-6 mb-6"
+            >
+              <div className="flex items-center gap-2 px-3 py-1.5 border border-neon/30 bg-neon/5 backdrop-blur-sm">
+                <div className="w-2 h-2 bg-neon rounded-full animate-pulse shadow-[0_0_8px_#00ff88]" />
+                <span className="font-mono text-[10px] md:text-xs text-neon">100% FEOC-FREE</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 border border-cyan-400/30 bg-cyan-400/5 backdrop-blur-sm">
+                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_#22d3ee]" />
+                <span className="font-mono text-[10px] md:text-xs text-cyan-400">DOMESTIC SUPPLY CHAIN</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 border border-amber-400/30 bg-amber-400/5 backdrop-blur-sm">
+                <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse shadow-[0_0_8px_#fbbf24]" />
+                <span className="font-mono text-[10px] md:text-xs text-amber-400">JUSTICE40 REGION</span>
+              </div>
+            </motion.div>
+
             {/* Location tag */}
             <motion.div 
               initial={{ opacity: 0 }}
@@ -187,7 +208,7 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               className="font-mono text-xs text-cyan-400/70 mb-6 tracking-widest"
             >
-              [ 8460 US 70, MEAD OK 73449 // LAT 33.9967 LONG -96.5122 ]
+              [ BRYAN COUNTY, OKLAHOMA // CHOCTAW NATION TERRITORY ]
             </motion.div>
 
             {/* Main headline */}
@@ -227,9 +248,10 @@ export default function Home() {
               className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12"
             >
               {[
-                { end: 60000, suffix: ' SF', label: 'TOTAL AREA', delay: 0 },
-                { end: 32, suffix: "'", label: 'CLEAR HEIGHT', delay: 0.1 },
-                { end: 3, suffix: '', label: 'ZONES', delay: 0.2 },
+                { end: 95, suffix: '%+', label: 'RECOVERY RATE', delay: 0 },
+                { end: 60000, suffix: ' SF', label: 'FACILITY', delay: 0.1 },
+                { end: 70, suffix: '%', label: 'CO2 REDUCTION', delay: 0.2 },
+                { end: 0, suffix: 'ZLD', label: 'ZERO DISCHARGE', delay: 0.3, isText: true },
               ].map((stat) => (
                 <motion.div
                   key={stat.label}

@@ -85,6 +85,55 @@ export default function TechSpecs() {
         description="Laboratory-grade precision at industrial scale. The technology that transforms us from a recycling facility into a critical materials refinery."
       />
 
+      {/* TRL Status Banner */}
+      <section className="py-8 bg-gradient-to-r from-emerald-950/30 via-slate-950 to-cyan-950/30 border-y border-neon/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Li-ion - Commercial Ready */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-6 p-6 border border-neon/30 bg-neon/5"
+            >
+              <div className="text-center">
+                <div className="font-mono text-3xl text-neon font-bold">TRL 9</div>
+                <div className="font-mono text-[10px] text-slate-500">COMMERCIAL</div>
+              </div>
+              <div className="flex-1">
+                <div className="font-mono text-sm text-neon mb-1">LITHIUM-ION RECYCLING</div>
+                <p className="text-slate-400 text-xs">
+                  Proven hydrometallurgical process ready for commercial-scale deployment. 
+                  Based on validated pilot data with 95%+ recovery rates.
+                </p>
+              </div>
+              <div className="w-2 h-16 bg-gradient-to-t from-neon/20 to-neon rounded-full" />
+            </motion.div>
+
+            {/* Na-ion - R&D Phase */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-6 p-6 border border-cyan-400/30 bg-cyan-400/5"
+            >
+              <div className="text-center">
+                <div className="font-mono text-3xl text-cyan-400 font-bold">TRL 4-6</div>
+                <div className="font-mono text-[10px] text-slate-500">R&D PHASE</div>
+              </div>
+              <div className="flex-1">
+                <div className="font-mono text-sm text-cyan-400 mb-1">SODIUM-ION MANUFACTURING</div>
+                <p className="text-slate-400 text-xs">
+                  Advanced development and pilot production. Technology validation in progress 
+                  with path to commercial scale by 2028.
+                </p>
+              </div>
+              <div className="w-2 h-16 bg-gradient-to-t from-cyan-400/20 via-cyan-400/50 to-cyan-400/20 rounded-full" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Core Technical Pillars */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
