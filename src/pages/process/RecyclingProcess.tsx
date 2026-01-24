@@ -83,6 +83,24 @@ export default function RecyclingProcess() {
         image="/recycling-area.png"
       />
 
+      {/* FEOC Compliance Banner */}
+      <section className="py-6 bg-gradient-to-r from-emerald-950/40 via-slate-950 to-emerald-950/40 border-y border-neon/20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 border border-neon/50 bg-neon/10 flex items-center justify-center">
+              <div className="w-3 h-3 bg-neon rounded-full shadow-[0_0_10px_#00ff88] animate-pulse" />
+            </div>
+            <div>
+              <div className="font-mono text-sm text-neon mb-1">IRA SECTION 30D COMPLIANT</div>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Our feedstock sourcing and chain-of-custody protocols adhere strictly to IRA Section 30D guidelines, 
+                ensuring zero material leakage to or from Foreign Entities of Concern.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Recovery Stats */}
       <section className="py-16 bg-slate-900/30">
         <div className="max-w-7xl mx-auto px-6">

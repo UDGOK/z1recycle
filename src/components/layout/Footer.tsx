@@ -93,8 +93,15 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="font-mono text-xs text-muted">
-              [ 2026 Z1 RECYCLING CENTER // MEAD, OKLAHOMA // BRYAN COUNTY ]
+            <div className="flex items-center gap-3">
+              <div className="font-mono text-xs text-muted">
+                © 2026 Z1 RECYCLING CENTER
+              </div>
+              <div className="w-px h-3 bg-slate-700" />
+              <div className="flex items-center gap-1.5 px-2 py-0.5 border border-neon/40 bg-neon/5">
+                <div className="w-1.5 h-1.5 bg-neon rounded-full shadow-[0_0_6px_#00ff88]" />
+                <span className="font-mono text-[10px] text-neon font-medium">FEOC-FREE</span>
+              </div>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
               <Link to="/community" className="font-mono text-xs text-muted hover:text-neon transition-colors">
