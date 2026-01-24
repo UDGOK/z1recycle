@@ -445,6 +445,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Oklahoma Strategic Advantage Callout */}
+      <section className="py-16 relative">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            {/* Terminal-style container */}
+            <div className="border border-neon/40 bg-black/60 backdrop-blur-sm relative overflow-hidden">
+              {/* Scanline effect */}
+              <div className="absolute inset-0 pointer-events-none opacity-10">
+                <div className="absolute inset-0" style={{ 
+                  backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,136,0.03) 2px, rgba(0,255,136,0.03) 4px)' 
+                }} />
+              </div>
+              
+              {/* Header bar */}
+              <div className="flex items-center gap-3 px-4 py-2 border-b border-neon/20 bg-neon/5">
+                <div className="flex gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                </div>
+                <span className="font-mono text-[10px] text-neon/60 tracking-widest">STRATEGIC_ADVANTAGE.SYS</span>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 md:p-8 relative">
+                {/* Location icon */}
+                <div className="absolute top-6 right-6 md:top-8 md:right-8">
+                  <motion.div
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                    className="text-4xl md:text-5xl opacity-20"
+                  >
+                    📍
+                  </motion.div>
+                </div>
+
+                <div className="font-mono text-xs text-cyan-400 tracking-widest mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_8px_#22d3ee]" />
+                  LOCATION INTELLIGENCE
+                </div>
+
+                <blockquote className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl">
+                  <span className="text-neon text-2xl font-mono">"</span>
+                  Unlike coastal projects facing zoning gridlock, Z1 Recycle operates within the{' '}
+                  <span className="text-neon font-semibold">'Oklahoma Critical Minerals Hub,'</span>{' '}
+                  a state-sanctioned zone with{' '}
+                  <span className="text-cyan-400">expedited permitting</span>, deep energy workforce availability{' '}
+                  <span className="text-slate-400 text-base">(transitioning oil/gas workers)</span>, and{' '}
+                  <span className="text-cyan-400">direct rail access</span> to the Central US manufacturing corridor.
+                  <span className="text-neon text-2xl font-mono">"</span>
+                </blockquote>
+
+                {/* Key advantages pills */}
+                <div className="flex flex-wrap gap-3 mt-6">
+                  {['EXPEDITED PERMITS', 'SKILLED WORKFORCE', 'RAIL ACCESS', 'ZERO GRIDLOCK'].map((tag) => (
+                    <span 
+                      key={tag}
+                      className="px-3 py-1 border border-neon/30 text-neon/80 font-mono text-[10px] tracking-wider bg-neon/5"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Glowing corner accents */}
+              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-neon shadow-[0_0_15px_rgba(0,255,136,0.3)]" />
+              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-neon shadow-[0_0_15px_rgba(0,255,136,0.3)]" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* How It Works Preview */}
       <section className="py-24 relative overflow-hidden">
         {/* Gradient background */}
