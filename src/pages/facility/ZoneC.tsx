@@ -167,6 +167,17 @@ export default function ZoneC() {
             data={equipment}
             accentColor="#00aaff"
           />
+
+          <div className="mt-6 p-4 border border-cyan-400/30 bg-cyan-950/20">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+              <span className="font-mono text-sm text-cyan-400">MULTI-CHEMISTRY CAPABILITY</span>
+            </div>
+            <p className="text-slate-400 text-sm mt-2 ml-5">
+              Designed for multi-chemistry production (Li-ion & Na-ion), allowing rapid switching 
+              between chemistries on shared lines without major retooling.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -182,9 +193,13 @@ export default function ZoneC() {
             <h2 className="font-mono text-2xl md:text-3xl font-bold mb-4">
               WHY <span className="text-cyan-400">SODIUM-ION</span>?
             </h2>
-            <p className="text-muted max-w-3xl">
+            <p className="text-muted max-w-3xl mb-4">
               Sodium-ion batteries offer significant advantages for grid storage and 
-              cost-sensitive applications. Our R&D focuses on next-generation chemistries.
+              cost-sensitive applications.
+            </p>
+            <p className="text-slate-300 max-w-3xl border-l-2 border-cyan-400 pl-4 italic">
+              Our R&D focuses on Prussian White cathodes and Hard Carbon anodes—a chemistry stack proven 
+              to deliver energy density comparable to LFP with superior performance in extreme temperatures.
             </p>
           </motion.div>
 
