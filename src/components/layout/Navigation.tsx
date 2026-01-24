@@ -2,10 +2,16 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
+interface SubMenuItem {
+  label: string;
+  href: string;
+  terminalLabel: string;
+}
+
 interface NavItem {
   label: string;
   href: string;
-  submenu?: { label: string; href: string }[];
+  submenu?: SubMenuItem[];
 }
 
 const navItems: NavItem[] = [
@@ -16,19 +22,19 @@ const navItems: NavItem[] = [
     label: 'FACILITY',
     href: '/facility',
     submenu: [
-      { label: 'Overview', href: '/facility' },
-      { label: 'Zone A - Recycling', href: '/facility/zone-a' },
-      { label: 'Zone B - Utility', href: '/facility/zone-b' },
-      { label: 'Zone C - Manufacturing', href: '/facility/zone-c' },
+      { label: 'Overview', href: '/facility', terminalLabel: 'FACILITY_OVERVIEW' },
+      { label: 'Zone A - Recycling', href: '/facility/zone-a', terminalLabel: 'ZONE_A_RECYCLING' },
+      { label: 'Zone B - Utility', href: '/facility/zone-b', terminalLabel: 'ZONE_B_UTILITY' },
+      { label: 'Zone C - Manufacturing', href: '/facility/zone-c', terminalLabel: 'ZONE_C_MFG' },
     ],
   },
   {
     label: 'PROCESS',
     href: '/process',
     submenu: [
-      { label: 'Recycling (Zone A)', href: '/process/recycling' },
-      { label: 'Manufacturing (Zone C)', href: '/process/manufacturing' },
-      { label: 'Equipment Guide', href: '/process/equipment' },
+      { label: 'Recycling (Zone A)', href: '/process/recycling', terminalLabel: 'RECYCLING_OPS' },
+      { label: 'Manufacturing (Zone C)', href: '/process/manufacturing', terminalLabel: 'MFG_PROTOCOLS' },
+      { label: 'Equipment Guide', href: '/process/equipment', terminalLabel: 'EQUIPMENT_SPECS' },
     ],
   },
   { label: 'SUSTAINABILITY', href: '/sustainability' },
@@ -37,19 +43,31 @@ const navItems: NavItem[] = [
     label: 'ABOUT',
     href: '/about',
     submenu: [
-      { label: 'Timeline', href: '/about/timeline' },
-      { label: 'Team', href: '/about/team' },
-      { label: 'FAQ', href: '/about/faq' },
-      { label: 'Contact', href: '/about/contact' },
+      { label: 'Timeline', href: '/about/timeline', terminalLabel: 'PROJECT_TIMELINE' },
+      { label: 'Team', href: '/about/team', terminalLabel: 'TEAM_DATA' },
+      { label: 'FAQ', href: '/about/faq', terminalLabel: 'FAQ_DATABASE' },
+      { label: 'Contact', href: '/about/contact', terminalLabel: 'COMM_CHANNELS' },
     ],
   },
 ];
+
+// Blinking cursor component
+function BlinkingCursor() {
+  return (
+    <motion.span
+      className="inline-block w-2 h-4 bg-neon ml-2"
+      animate={{ opacity: [1, 0] }}
+      transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
+    />
+  );
+}
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -96,32 +114,61 @@ export default function Navigation() {
                   data-hover
                 >
                   {item.label}
-                  {item.submenu && <span className="ml-1 text-xs">▼</span>}
+                  {item.submenu && <span className="ml-1 text-xs opacity-60">▼</span>}
                 </Link>
 
-                {/* Submenu */}
+                {/* Terminal-Style Submenu */}
                 <AnimatePresence>
                   {item.submenu && activeSubmenu === item.label && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 min-w-[200px] bg-slate-900/95 backdrop-blur-md border border-neon/20"
+                      initial={{ opacity: 0, scaleY: 0, y: -10 }}
+                      animate={{ opacity: 1, scaleY: 1, y: 0 }}
+                      exit={{ opacity: 0, scaleY: 0, y: -10 }}
+                      transition={{ duration: 0.15, ease: 'easeOut' }}
+                      style={{ originY: 0 }}
+                      className="absolute top-full left-0 mt-2 min-w-[260px] bg-black border border-neon shadow-[0_0_20px_rgba(0,255,136,0.15)]"
                     >
-                      {item.submenu.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          to={sub.href}
-                          className={`block px-4 py-3 font-mono text-xs transition-colors border-b border-gray-800 last:border-0 ${
-                            location.pathname === sub.href
-                              ? 'text-neon bg-neon/10'
-                              : 'text-muted hover:text-neon hover:bg-white/5'
-                          }`}
-                          data-hover
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
+                      {/* Terminal Header */}
+                      <div className="px-3 py-2 border-b border-neon/30 flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-red-500" />
+                        <span className="w-2 h-2 rounded-full bg-yellow-500" />
+                        <span className="w-2 h-2 rounded-full bg-green-500" />
+                        <span className="ml-2 font-mono text-[10px] text-neon/60 tracking-widest">
+                          {item.label}_TERMINAL
+                        </span>
+                      </div>
+
+                      {/* Terminal Body */}
+                      <div className="p-2">
+                        {item.submenu.map((sub, index) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            className="block group/item"
+                            onMouseEnter={() => setHoveredItem(sub.href)}
+                            onMouseLeave={() => setHoveredItem(null)}
+                            data-hover
+                          >
+                            <div
+                              className={`px-3 py-2.5 font-mono text-xs tracking-wide transition-all duration-100 flex items-center ${
+                                location.pathname === sub.href
+                                  ? 'text-neon bg-neon/10'
+                                  : 'text-slate-400 hover:text-neon hover:bg-neon/5'
+                              }`}
+                            >
+                              <span className="text-neon/50 mr-2">&gt;</span>
+                              <span className="text-neon/70 mr-2">[{String(index + 1).padStart(2, '0')}]</span>
+                              <span>{sub.terminalLabel}</span>
+                              {hoveredItem === sub.href && <BlinkingCursor />}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+
+                      {/* Terminal Footer */}
+                      <div className="px-3 py-1.5 border-t border-neon/30 font-mono text-[9px] text-neon/40 tracking-wider">
+                        SYS_READY // SELECT_MODULE
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -146,25 +193,33 @@ export default function Navigation() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Also Terminal Style */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-slate-950 pt-20 lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-black pt-20 lg:hidden overflow-y-auto"
           >
-            <div className="p-6 space-y-1 pb-24">
-              {navItems.map((item) => (
-                <div key={item.href} className="border-b border-slate-800">
+            {/* Mobile Terminal Header */}
+            <div className="px-6 py-3 border-b border-neon/30 font-mono text-xs text-neon/60">
+              Z1_NAVIGATION_SYSTEM // MOBILE_INTERFACE
+            </div>
+
+            <div className="p-4 space-y-0">
+              {navItems.map((item, navIndex) => (
+                <div key={item.href} className="border-b border-neon/10">
                   {item.submenu ? (
                     <>
                       <button
                         onClick={() => setMobileSubmenu(mobileSubmenu === item.label ? null : item.label)}
-                        className="w-full flex items-center justify-between font-mono text-base text-white py-4 px-2"
+                        className="w-full flex items-center justify-between font-mono text-sm text-white py-4 px-2"
                       >
-                        <span className={location.pathname.startsWith(item.href) ? 'text-neon' : ''}>{item.label}</span>
+                        <span className="flex items-center">
+                          <span className="text-neon/50 mr-2">&gt;</span>
+                          <span className={location.pathname.startsWith(item.href) ? 'text-neon' : ''}>{item.label}</span>
+                        </span>
                         <motion.span
                           animate={{ rotate: mobileSubmenu === item.label ? 180 : 0 }}
                           className="text-neon text-xs"
@@ -178,19 +233,20 @@ export default function Navigation() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden bg-slate-900/50"
+                            className="overflow-hidden bg-neon/5 border-l-2 border-neon/30 ml-4"
                           >
-                            {item.submenu.map((sub) => (
+                            {item.submenu.map((sub, subIndex) => (
                               <Link
                                 key={sub.href}
                                 to={sub.href}
-                                className={`block font-mono text-sm py-3 px-6 border-l-2 ${
+                                className={`block font-mono text-xs py-3 px-4 ${
                                   location.pathname === sub.href
-                                    ? 'text-neon border-neon bg-neon/5'
-                                    : 'text-slate-400 border-transparent hover:text-white'
+                                    ? 'text-neon bg-neon/10'
+                                    : 'text-slate-400'
                                 }`}
                               >
-                                {sub.label}
+                                <span className="text-neon/50 mr-2">[{String(subIndex + 1).padStart(2, '0')}]</span>
+                                {sub.terminalLabel}
                               </Link>
                             ))}
                           </motion.div>
@@ -200,15 +256,21 @@ export default function Navigation() {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`block font-mono text-base py-4 px-2 ${
+                      className={`flex items-center font-mono text-sm py-4 px-2 ${
                         location.pathname === item.href ? 'text-neon' : 'text-white'
                       }`}
                     >
+                      <span className="text-neon/50 mr-2">&gt;</span>
                       {item.label}
                     </Link>
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* Mobile Terminal Footer */}
+            <div className="absolute bottom-0 left-0 right-0 px-6 py-4 border-t border-neon/20 bg-black font-mono text-[10px] text-neon/40">
+              SYSTEM_STATUS: ONLINE // TAP_TO_NAVIGATE
             </div>
           </motion.div>
         )}
