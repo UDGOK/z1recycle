@@ -41,7 +41,7 @@ const checkmarks = [
   { text: 'Closing the materials loop', description: 'Recovered materials feed directly into domestic manufacturing' },
   { text: 'Supply chain resilience', description: 'Reduces dependence on imported critical minerals' },
   { text: 'Reduced carbon footprint', description: '90% lower emissions than primary mining' },
-  { text: 'Local job creation', description: '150+ skilled positions in Bryan County' },
+  { text: 'Local job creation', description: 'High-skilled careers in Bryan County' },
 ];
 
 const zldSteps = [

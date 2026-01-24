@@ -27,9 +27,10 @@ const pillars = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
-    stat: 150,
-    statSuffix: '+',
-    statLabel: 'High-Skilled Careers Created',
+    stat: 0,
+    statSuffix: '',
+    statLabel: 'Creating High-Skilled Careers',
+    isQualitative: true,
     description: 'Driving regional economic development through advanced manufacturing jobs and industrial investment.',
     points: [
       'Advanced manufacturing careers',
@@ -59,7 +60,7 @@ const pillars = [
 const impactMetrics = [
   { value: 10000, suffix: ' tons', label: 'Annual Processing Capacity' },
   { value: 60000, suffix: ' SF', label: 'Purpose-Built Facility' },
-  { value: 99.5, suffix: '%+', label: 'Cathode Grade Purity' },
+  { value: 98, suffix: '%+', label: 'Cathode Grade Purity' },
   { value: 0, suffix: '', label: 'Landfill Waste & Liquid Discharge', isZero: true },
 ];
 
@@ -140,7 +141,11 @@ export default function StrategicImpact() {
                   {/* Stat */}
                   <div className="mb-4">
                     <div className="font-mono text-4xl text-transparent bg-clip-text bg-gradient-to-r from-neon to-cyan-400">
-                      <AnimatedCounter end={pillar.stat} suffix={pillar.statSuffix} />
+                      {'isQualitative' in pillar && pillar.isQualitative ? (
+                        <span className="text-3xl">⚡</span>
+                      ) : (
+                        <AnimatedCounter end={pillar.stat} suffix={pillar.statSuffix} />
+                      )}
                     </div>
                     <div className="font-mono text-xs text-cyan-400/70">{pillar.statLabel}</div>
                   </div>
