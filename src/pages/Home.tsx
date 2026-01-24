@@ -523,7 +523,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works Preview */}
+      {/* How It Works - Process Infographic */}
       <section className="py-24 relative overflow-hidden">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-cyan-950/10 to-slate-950" />
@@ -533,7 +533,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <div className="font-mono text-xs text-cyan-400 tracking-widest mb-2">// PROCESS</div>
             <h2 className="font-mono text-3xl md:text-4xl font-bold mb-4">
@@ -541,113 +541,56 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          {/* Process steps with animated flowing line */}
-          <div className="relative">
-            {/* Static base line */}
-            <div className="absolute top-8 left-[10%] right-[10%] h-0.5 bg-slate-700/50 hidden md:block" />
+          {/* Infographic Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative group cursor-pointer mx-auto max-w-5xl"
+            onClick={() => setSelectedImage({ src: '/z1-journey.png', alt: 'Z1 Battery Recycling Process Journey', zone: 'Process Overview' })}
+          >
+            {/* Outer glow effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-neon/20 via-cyan-500/20 to-neon/20 rounded-lg blur-sm group-hover:blur-md transition-all duration-300" />
             
-            {/* Animated flowing energy pulse */}
-            <div className="absolute top-8 left-[10%] right-[10%] h-0.5 hidden md:block overflow-hidden">
-              <motion.div
-                className="h-full w-1/4 bg-gradient-to-r from-transparent via-neon to-transparent"
-                animate={{ x: ['-100%', '500%'] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-                style={{ boxShadow: '0 0 20px #00ff88, 0 0 40px #00ff88' }}
-              />
+            {/* Terminal frame */}
+            <div className="relative bg-black/80 border border-neon/30 rounded-lg overflow-hidden shadow-[0_0_30px_rgba(0,255,136,0.15)] group-hover:shadow-[0_0_50px_rgba(0,255,136,0.25)] transition-all duration-300">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 px-4 py-2 bg-slate-900/80 border-b border-neon/20">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-neon/70" />
+                </div>
+                <span className="font-mono text-xs text-cyan-400/70 ml-2">PROCESS_OVERVIEW.SYS</span>
+                <span className="font-mono text-xs text-slate-500 ml-auto">[ CLICK TO EXPAND ]</span>
+              </div>
+              
+              {/* Image container */}
+              <div className="relative p-4">
+                <img
+                  src="/z1-journey.png"
+                  alt="Z1 Battery Recycling Process Journey"
+                  className="w-full h-auto rounded group-hover:scale-[1.01] transition-transform duration-300"
+                />
+                
+                {/* Scanline overlay */}
+                <div className="absolute inset-0 pointer-events-none opacity-10 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,255,136,0.03)_2px,rgba(0,255,136,0.03)_4px)]" />
+              </div>
             </div>
             
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-              {[
-                { step: '01', label: 'COLLECT', icon: '📦' },
-                { step: '02', label: 'DISCHARGE', icon: '⚡' },
-                { step: '03', label: 'SHRED', icon: '⚙️' },
-                { step: '04', label: 'SEPARATE', icon: '🔬' },
-                { step: '05', label: 'RECOVER', icon: '♻️' },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.step}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, type: 'spring', stiffness: 200 }}
-                  className="flex flex-col items-center group relative"
-                >
-                  {/* Arrow connector (except for last item) */}
-                  {index < 4 && (
-                    <motion.div 
-                      className="hidden md:block absolute left-full top-8 -translate-y-1/2 ml-1"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + 0.3 }}
-                    >
-                      <svg width="24" height="12" className="text-neon/50">
-                        <path d="M0 6 L18 6 M14 2 L18 6 L14 10" stroke="currentColor" strokeWidth="2" fill="none"/>
-                      </svg>
-                    </motion.div>
-                  )}
-                  
-                  <div className="relative">
-                    {/* Glowing ring animation */}
-                    <motion.div
-                      className="absolute inset-0 rounded-full border-2 border-neon"
-                      animate={{ 
-                        scale: [1, 1.3, 1],
-                        opacity: [0.5, 0, 0.5]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        delay: index * 0.4,
-                        repeat: Infinity,
-                        ease: 'easeOut'
-                      }}
-                    />
-                    
-                    {/* Main circle */}
-                    <motion.div 
-                      className="w-16 h-16 rounded-full border-2 border-neon/50 flex items-center justify-center text-2xl bg-slate-950 relative z-10"
-                      whileHover={{ 
-                        scale: 1.1,
-                        borderColor: '#00ff88',
-                        boxShadow: '0 0 30px rgba(0,255,136,0.5)'
-                      }}
-                      animate={{
-                        boxShadow: [
-                          '0 0 10px rgba(0,255,136,0.2)',
-                          '0 0 20px rgba(0,255,136,0.4)',
-                          '0 0 10px rgba(0,255,136,0.2)'
-                        ]
-                      }}
-                      transition={{
-                        boxShadow: {
-                          duration: 2,
-                          delay: index * 0.4,
-                          repeat: Infinity
-                        }
-                      }}
-                    >
-                      {item.icon}
-                    </motion.div>
-                  </div>
-                  
-                  <motion.div 
-                    className="font-mono text-xs text-cyan-400/50 mt-2"
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 2, delay: index * 0.4, repeat: Infinity }}
-                  >
-                    {item.step}
-                  </motion.div>
-                  <div className="font-mono text-sm text-white">{item.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+            {/* Corner accents */}
+            <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-neon/50 -translate-x-1 -translate-y-1" />
+            <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-neon/50 translate-x-1 -translate-y-1" />
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-neon/50 -translate-x-1 translate-y-1" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-neon/50 translate-x-1 translate-y-1" />
+          </motion.div>
 
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
+            className="text-center mt-10"
           >
             <Link
               to="/process/recycling"
