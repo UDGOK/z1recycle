@@ -83,6 +83,40 @@ export default function RecyclingProcess() {
         image="/recycling-area.webp"
       />
 
+      {/* Process Video Showcase */}
+      <section className="py-16 bg-slate-950 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <div className="font-mono text-xs text-cyan-400 tracking-widest mb-2">// SYSTEM OVERVIEW</div>
+            <h2 className="font-mono text-2xl md:text-3xl font-bold">
+              CIRCULAR <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon to-cyan-400">ECONOMY</span> IN ACTION
+            </h2>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative rounded-lg overflow-hidden border border-neon/30 shadow-[0_0_40px_rgba(0,255,136,0.15)]"
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto"
+            >
+              <source src="/hero-video.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FEOC Compliance Banner */}
       <section className="py-6 bg-gradient-to-r from-emerald-950/40 via-slate-950 to-emerald-950/40 border-y border-neon/20">
         <div className="max-w-5xl mx-auto px-6">

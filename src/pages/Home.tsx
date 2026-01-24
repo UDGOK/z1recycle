@@ -154,7 +154,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Ken Burns background image */}
+        {/* Background image */}
         <motion.div 
           className="absolute inset-0"
           style={{ y, scale }}
@@ -163,7 +163,6 @@ export default function Home() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: 'url(/facility-overview.webp)' }}
           />
-          {/* Gradient overlay - green/cyan tones */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/70 to-slate-950" />
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/30 via-transparent to-cyan-950/30" />
         </motion.div>
