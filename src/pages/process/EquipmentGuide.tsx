@@ -13,28 +13,29 @@ interface Equipment {
 }
 
 const allEquipment: Equipment[] = [
-  // Zone A Equipment
-  { id: 'A1', name: 'Discharge System', zone: 'A', category: 'Pre-processing', function: 'Safe battery discharge', specs: ['Brine tanks', 'H2 venting', 'Conductive discharge', '24-72hr cycle'], vendor: 'Custom' },
-  { id: 'A2', name: 'Primary Shredder', zone: 'A', category: 'Size Reduction', function: 'Initial size reduction', specs: ['Dual-shaft design', 'N2 injection', '4-6" output', 'Explosion-proof'], vendor: 'SSI Shredding' },
-  { id: 'A3', name: 'Granulator', zone: 'A', category: 'Size Reduction', function: 'Secondary size reduction', specs: ['Hammer mill', '<10mm output', 'Enclosed system'], vendor: 'Hosokawa' },
-  { id: 'A4', name: 'Air Classifier', zone: 'A', category: 'Separation', function: 'Light material separation', specs: ['Zig-zag design', '95%+ efficiency', 'Removes plastics/foils'] },
-  { id: 'A5', name: 'Magnetic Separator', zone: 'A', category: 'Separation', function: 'Ferrous metal recovery', specs: ['Drum type', 'Steel/nickel recovery', 'Self-cleaning'] },
-  { id: 'A6', name: 'Eddy Current Separator', zone: 'A', category: 'Separation', function: 'Non-ferrous separation', specs: ['Aluminum recovery', 'Copper recovery', 'Adjustable frequency'] },
-  { id: 'A7', name: 'Vibratory Sieve', zone: 'A', category: 'Classification', function: 'Size classification', specs: ['Multi-deck', 'Black mass isolation', 'Dust containment'] },
-  { id: 'A8', name: 'Wet Scrubber', zone: 'A', category: 'Air Quality', function: 'Gas treatment', specs: ['HF removal', 'Particulate removal', 'Caustic circulation'] },
-  { id: 'A9', name: 'Baghouse Dust Collector', zone: 'A', category: 'Air Quality', function: 'Air filtration', specs: ['HEPA 99.97%', 'Explosion-proof', 'Auto cleaning'] },
-  { id: 'A10', name: 'Super Sack Station', zone: 'A', category: 'Packaging', function: 'Product packaging', specs: ['1-ton capacity', 'Sealed filling', 'Integrated scale'] },
-  // Zone C Equipment
-  { id: 'C1', name: 'Vacuum Mixer', zone: 'C', category: 'Slurry Prep', function: 'Electrode slurry preparation', specs: ['Planetary design', 'Vacuum degassing', '2-4hr cycle'] },
-  { id: 'C2', name: 'Slot-Die Coater', zone: 'C', category: 'Coating', function: 'Electrode coating', specs: ['30-50 ft line', '+/- 2 micron tolerance', 'Double-sided'] },
-  { id: 'C3', name: 'Drying Oven', zone: 'C', category: 'Coating', function: 'Solvent removal', specs: ['Multi-zone', 'NMP recovery', '<50 ppm moisture'] },
-  { id: 'C4', name: 'Roll Press', zone: 'C', category: 'Processing', function: 'Electrode calendering', specs: ['2000 kg/cm pressure', 'Micron gap control', 'Heated rolls'] },
-  { id: 'C5', name: 'Slitter', zone: 'C', category: 'Processing', function: 'Electrode cutting', specs: ['Laser-guided', 'Burr-free', '+/- 0.1mm tolerance'] },
-  { id: 'C6', name: 'Winding Machine', zone: 'C', category: 'Assembly', function: 'Cell core formation', specs: ['Tension controlled', 'Tab welding', 'Vision inspection'] },
-  { id: 'C7', name: 'Electrolyte Filling', zone: 'C', category: 'Assembly', function: 'Electrolyte injection', specs: ['Vacuum-assisted', '0.1g accuracy', 'Multi-cycle'] },
-  { id: 'C8', name: 'Vacuum Sealer', zone: 'C', category: 'Assembly', function: 'Cell sealing', specs: ['Heat + vacuum', 'Helium leak test', 'Strength testing'] },
-  { id: 'C9', name: 'Formation Cabinet', zone: 'C', category: 'Testing', function: 'Initial charging', specs: ['Multi-channel', 'Temp controlled', 'Data logging'] },
-  { id: 'C10', name: 'Testing Equipment', zone: 'C', category: 'Testing', function: 'Quality control', specs: ['Capacity test', 'Impedance test', 'Cycle testing'] },
+  // Zone A Equipment - Recycling Line
+  { id: 'A1', name: 'XRF Chemistry Analyzer', zone: 'A', category: 'Intake', function: 'Real-time cell chemistry identification', specs: ['NMC/LFP/NCA/LCO detection', '99.2% accuracy', 'X-ray fluorescence', 'Automated conveyor routing'], vendor: 'Thermo Scientific' },
+  { id: 'A2', name: 'Thermal Imaging Scanner', zone: 'A', category: 'Intake', function: 'Compromised cell detection', specs: ['FLIR sensor array', 'Thermal anomaly alerts', 'Automated rejection', 'Real-time monitoring'] },
+  { id: 'A3', name: 'Inert Atmosphere Shredder', zone: 'A', category: 'Size Reduction', function: 'Non-discharge direct shredding', specs: ['O₂ maintained below 1%', 'Continuous N₂ injection', 'H₂/CO gas chromatography', 'CO₂ fire suppression (under 200ms)'], vendor: 'Erdwich' },
+  { id: 'A4', name: 'Cryogenic Hammer Mill', zone: 'A', category: 'Size Reduction', function: 'Ultra-low temperature granulation', specs: ['-40°C LN₂ cooling', 'D50=2.3mm output', '2,500 kg/hr throughput', 'Zero thermal degradation'], vendor: 'Hosokawa Alpine' },
+  { id: 'A5', name: 'Pre-Lithium Extraction Reactor', zone: 'A', category: 'Leaching', function: 'Early-stage lithium recovery', specs: ['60°C aqueous process', '92% Li recovery', '99.5% Li₂CO₃ purity', '40% downstream acid reduction'], vendor: 'Proprietary' },
+  { id: 'A6', name: 'Zig-Zag Air Classifier', zone: 'A', category: 'Separation', function: 'Light fraction separation', specs: ['Separator film removal', 'Plastic capture (over 99%)', 'Adjustable air velocity', 'Continuous operation'] },
+  { id: 'A7', name: 'Rare-Earth Magnetic Drum', zone: 'A', category: 'Separation', function: 'Ferrous metal extraction', specs: ['NdFeB magnets', 'Steel casing recovery', 'Ni tab separation', 'Self-cleaning design'], vendor: 'Eriez' },
+  { id: 'A8', name: 'High-Frequency Eddy Current', zone: 'A', category: 'Separation', function: 'Non-ferrous metal recovery', specs: ['Al foil recovery (over 99%)', 'Cu collector recovery', 'Variable frequency drive', 'Splitter plate adjustment'], vendor: 'Steinert' },
+  { id: 'A9', name: 'Thermal Delamination Furnace', zone: 'A', category: 'Liberation', function: 'Electrode-foil separation', specs: ['450°C N₂ atmosphere', 'PVDF binder removal', 'Crystal structure preserved', 'NMP-free process'], vendor: 'Custom' },
+  { id: 'A10', name: 'Froth Flotation Cell', zone: 'A', category: 'Refining', function: 'Graphite-cathode separation', specs: ['98% separation efficiency', 'Graphite purity (over 98% C)', 'Continuous operation', 'Reagent dosing control'], vendor: 'Metso Outotec' },
+  { id: 'A11', name: 'Selective Calcination Kiln', zone: 'A', category: 'Refining', function: 'Carbon and organic removal', specs: ['Controlled atmosphere', 'Temperature profiling', 'Residual carbon (under 0.5%)', 'Continuous feed'] },
+  { id: 'A12', name: 'Solvent Extraction Cascade', zone: 'A', category: 'Hydromet', function: 'Ni/Co/Mn selective separation', specs: ['Organic acid leaching', '99.9% selectivity', 'Multi-stage mixer-settlers', '90% lower acid vs H₂SO₄'], vendor: 'Koch Modular' },
+  { id: 'A13', name: 'Zero Liquid Discharge System', zone: 'A', category: 'Environmental', function: 'Process water recycling', specs: ['98% water recovery', 'Crystallizer for salts', 'RO + evaporator train', 'No wastewater discharge'], vendor: 'Veolia' },
+  // Zone C Equipment - Manufacturing
+  { id: 'C1', name: 'Planetary Vacuum Mixer', zone: 'C', category: 'Slurry Prep', function: 'Electrode slurry preparation', specs: ['Dual planetary motion', 'Vacuum degassing', '2-4hr cycle time', 'Temperature controlled'], vendor: 'Ross' },
+  { id: 'C2', name: 'Slot-Die Coater', zone: 'C', category: 'Coating', function: 'Precision electrode coating', specs: ['±2 micron tolerance', '30-50 ft line length', 'Double-sided capability', 'Closed-loop thickness control'], vendor: 'Hirano Tecseed' },
+  { id: 'C3', name: 'Multi-Zone Drying Oven', zone: 'C', category: 'Coating', function: 'NMP solvent removal', specs: ['NMP recovery (over 95%)', 'Under 50 ppm moisture', 'Zoned temperature control', 'IR heating option'], vendor: 'Despatch' },
+  { id: 'C4', name: 'Precision Roll Press', zone: 'C', category: 'Processing', function: 'Electrode calendering', specs: ['2000 kg/cm line pressure', 'Micron gap control', 'Heated rolls to 120°C', 'In-line thickness gauge'] },
+  { id: 'C5', name: 'Laser Slitter', zone: 'C', category: 'Processing', function: 'Electrode cutting', specs: ['±0.1mm tolerance', 'Burr-free edges', 'Vision alignment', 'Dust extraction'], vendor: 'Manz' },
+  { id: 'C6', name: 'Automated Winding Machine', zone: 'C', category: 'Assembly', function: 'Cell core formation', specs: ['Tension control ±1%', 'Ultrasonic tab welding', 'Vision inspection', 'Recipe management'] },
+  { id: 'C7', name: 'Vacuum Electrolyte Filler', zone: 'C', category: 'Assembly', function: 'Precision electrolyte injection', specs: ['0.1g accuracy', 'Vacuum-assisted wetting', 'Multi-cycle fill', 'Helium leak check'], vendor: 'Sovema' },
+  { id: 'C8', name: 'Formation & Aging Cabinet', zone: 'C', category: 'Testing', function: 'Initial charging and SEI formation', specs: ['512+ channels', '±0.05% voltage accuracy', 'Temperature controlled', 'Full data logging'], vendor: 'Bitrode' },
 ];
 
 export default function EquipmentGuide() {
