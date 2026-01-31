@@ -15,9 +15,16 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'HOME', href: '/' },
-  { label: 'STRATEGIC IMPACT', href: '/strategic-impact' },
-  { label: 'TECHNOLOGY', href: '/technology' },
+  {
+    label: 'TECHNOLOGY',
+    href: '/technology',
+    submenu: [
+      { label: 'Tech Specs', href: '/technology', terminalLabel: 'TECH_SPECIFICATIONS' },
+      { label: 'Recycling Process', href: '/process/recycling', terminalLabel: 'RECYCLING_PROCESS' },
+      { label: 'Manufacturing', href: '/process/manufacturing', terminalLabel: 'MFG_PROTOCOLS' },
+      { label: 'Equipment Guide', href: '/process/equipment', terminalLabel: 'EQUIPMENT_SPECS' },
+    ],
+  },
   {
     label: 'FACILITY',
     href: '/facility',
@@ -29,27 +36,25 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: 'PROCESS',
-    href: '/process',
+    label: 'IMPACT',
+    href: '/strategic-impact',
     submenu: [
-      { label: 'Recycling (Zone A)', href: '/process/recycling', terminalLabel: 'RECYCLING_OPS' },
-      { label: 'Manufacturing (Zone C)', href: '/process/manufacturing', terminalLabel: 'MFG_PROTOCOLS' },
-      { label: 'Equipment Guide', href: '/process/equipment', terminalLabel: 'EQUIPMENT_SPECS' },
+      { label: 'Strategic Impact', href: '/strategic-impact', terminalLabel: 'STRATEGIC_IMPACT' },
+      { label: 'Sustainability', href: '/sustainability', terminalLabel: 'SUSTAINABILITY' },
+      { label: 'Community', href: '/community', terminalLabel: 'COMMUNITY_IMPACT' },
     ],
   },
-  { label: 'SUSTAINABILITY', href: '/sustainability' },
-  { label: 'COMMUNITY', href: '/community' },
-  { label: 'INVESTORS', href: '/investors' },
   {
     label: 'ABOUT',
     href: '/about',
     submenu: [
-      { label: 'Timeline', href: '/about/timeline', terminalLabel: 'PROJECT_TIMELINE' },
       { label: 'Team', href: '/about/team', terminalLabel: 'TEAM_DATA' },
+      { label: 'Timeline', href: '/about/timeline', terminalLabel: 'PROJECT_TIMELINE' },
       { label: 'FAQ', href: '/about/faq', terminalLabel: 'FAQ_DATABASE' },
       { label: 'Contact', href: '/about/contact', terminalLabel: 'COMM_CHANNELS' },
     ],
   },
+  { label: 'INVESTORS', href: '/investors' },
 ];
 
 // Blinking cursor component
