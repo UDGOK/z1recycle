@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
+import SEO from '../components/SEO';
 
 // Floating particles background - green/cyan only
 function ParticleField() {
@@ -152,6 +153,12 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Lithium-Ion Battery Recycling Facility in Oklahoma"
+        description="Z1 Recycling Center - State-of-the-art lithium-ion battery recycling facility in Mead, Oklahoma. 98% metal recovery, zero liquid discharge, IRA/FEOC compliant."
+        keywords="battery recycling, lithium-ion recycling, Oklahoma recycling facility, critical minerals, EV battery recycling, black mass processing"
+        canonical="/"
+      />
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background image */}

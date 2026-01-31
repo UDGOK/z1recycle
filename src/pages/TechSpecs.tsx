@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO';
 
 const specs = [
   {
@@ -82,6 +83,12 @@ const additionalSpecs = [
 export default function TechSpecs() {
   return (
     <>
+      <SEO
+        title="Technology - Advanced Battery Recycling Process"
+        description="Pre-lithium extraction achieving 90-98% Li recovery. Non-discharge shredding, cryogenic granulation, closed-loop hydrometallurgy. Zero liquid discharge battery recycling technology."
+        keywords="pre-lithium extraction, battery recycling technology, hydrometallurgy, black mass processing, cryogenic granulation, zero liquid discharge"
+        canonical="/technology"
+      />
       <PageHeader
         section="TECHNOLOGY"
         title="PRECISION CHEMISTRY &"

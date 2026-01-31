@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO';
 
 function AnimatedGauge({ value, label, color = '#00ff88' }: { value: number; label: string; color?: string }) {
   const [current, setCurrent] = useState(0);
@@ -55,6 +56,12 @@ const zldSteps = [
 export default function Sustainability() {
   return (
     <>
+      <SEO
+        title="Sustainability - Environmental Commitment"
+        description="Zero liquid discharge, 98% water recycling, carbon footprint reduction. Z1 Recycling's commitment to sustainable battery recycling and circular economy."
+        keywords="sustainable battery recycling, zero liquid discharge, circular economy, environmental battery recycling, green recycling"
+        canonical="/sustainability"
+      />
       <PageHeader
         section="SUSTAINABILITY"
         title="ENVIRONMENTAL"

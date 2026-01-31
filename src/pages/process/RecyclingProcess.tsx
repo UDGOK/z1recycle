@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHeader from '../../components/ui/PageHeader';
 import AnimatedCounter from '../../components/ui/AnimatedCounter';
+import SEO from '../../components/SEO';
 
 const processSteps = [
   {
@@ -75,6 +76,12 @@ export default function RecyclingProcess() {
 
   return (
     <>
+      <SEO
+        title="Recycling Process - 8-Step Battery Recycling"
+        description="Complete lithium-ion battery recycling process: intelligent sorting, non-discharge shredding, cryogenic granulation, pre-lithium extraction, and hydrometallurgical recovery. 98% metal recovery."
+        keywords="battery recycling process, lithium extraction, black mass refining, hydrometallurgical recovery, non-discharge shredding"
+        canonical="/process/recycling"
+      />
       <PageHeader
         section="PROCESS // RECYCLING"
         title="DOMESTIC MATERIALS"

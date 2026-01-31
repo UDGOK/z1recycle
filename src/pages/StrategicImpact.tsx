@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import PageHeader from '../components/ui/PageHeader';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
+import SEO from '../components/SEO';
 
 const pillars = [
   {
@@ -67,6 +68,12 @@ const impactMetrics = [
 export default function StrategicImpact() {
   return (
     <>
+      <SEO
+        title="Strategic Impact - Securing America's Energy Future"
+        description="Z1 Recycling builds critical infrastructure for domestic battery supply chain independence in Bryan County, Oklahoma. Supporting IRA Section 30D and FEOC compliance."
+        keywords="domestic battery supply chain, critical minerals independence, IRA Section 30D, FEOC compliance, Oklahoma battery recycling"
+        canonical="/strategic-impact"
+      />
       <PageHeader
         section="STRATEGIC IMPACT"
         title="SECURING AMERICA'S"

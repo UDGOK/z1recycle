@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import PageHeader from '../../components/ui/PageHeader';
+import SEO from '../../components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,12 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact Us - Z1 Recycling Center"
+        description="Contact Z1 Recycling Center in Mead, Oklahoma. Inquiries about battery recycling services, partnerships, and investment opportunities. Located at 8460 US 70, Mead, OK 73449."
+        keywords="contact Z1 recycling, Oklahoma battery recycling contact, battery recycling inquiry"
+        canonical="/about/contact"
+      />
       <PageHeader
         section="ABOUT // CONTACT"
         title="ESTABLISH"

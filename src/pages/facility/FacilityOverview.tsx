@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHeader from '../../components/ui/PageHeader';
 import DataTable from '../../components/ui/DataTable';
+import SEO from '../../components/SEO';
 
 const zones = [
   { id: 'A', name: 'RECYCLING', sqft: '28,000', href: '/facility/zone-a', color: '#00ff88', x: 10, y: 15, w: 35, h: 70 },
@@ -25,6 +26,12 @@ export default function FacilityOverview() {
 
   return (
     <>
+      <SEO
+        title="Facility Overview - 60,000 SF Battery Recycling Plant"
+        description="Z1 Recycling's 60,000 SF purpose-built facility in Bryan County, Oklahoma. Three zones: Recycling (28,000 SF), Utility (4,000 SF), Manufacturing (28,000 SF). 10,000 tons annual capacity."
+        keywords="battery recycling facility, Oklahoma recycling plant, Bryan County facility, battery processing plant"
+        canonical="/facility"
+      />
       <PageHeader
         section="FACILITY"
         title="FACILITY"

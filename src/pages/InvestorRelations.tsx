@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import PageHeader from '../components/ui/PageHeader';
 import AnimatedCounter from '../components/ui/AnimatedCounter';
+import SEO from '../components/SEO';
 
 const investmentHighlights = [
   { value: 95, suffix: 'B+', label: 'TAM by 2035', prefix: '$' },
@@ -123,6 +124,12 @@ export default function InvestorRelations() {
 
   return (
     <>
+      <SEO
+        title="Investor Relations - Battery Recycling Investment Opportunity"
+        description="Invest in Z1 Recycling - $95B+ TAM by 2035, 98% metal recovery, IRA/FEOC compliant domestic battery recycling. Strategic investment in America's critical mineral supply chain."
+        keywords="battery recycling investment, cleantech investment, lithium recycling investor, critical minerals investment, EV battery recycling funding"
+        canonical="/investors"
+      />
       <PageHeader
         section="INVESTOR RELATIONS"
         title="POWERING THE"
