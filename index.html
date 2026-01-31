@@ -38,17 +38,29 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/og-image.png" />
   
-  <!-- Schema.org Structured Data - Organization -->
+  <!-- Schema.org Structured Data - Organization (Enhanced for GEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Z1 Recycling Center",
-    "alternateName": "Z1 Recycling",
+    "alternateName": ["Z1 Recycling", "Z1 Recycle", "Z1 Battery Recycling"],
     "url": "https://www.z1recycle.com",
-    "logo": "https://www.z1recycle.com/favicon.svg",
-    "description": "State-of-the-art lithium-ion battery recycling and sodium-ion R&D facility securing America's critical mineral supply chain.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.z1recycle.com/favicon.svg",
+      "width": 512,
+      "height": 512
+    },
+    "image": "https://www.z1recycle.com/og-image.png",
+    "description": "Z1 Recycling Center is a state-of-the-art lithium-ion battery recycling and sodium-ion R&D facility in Mead, Oklahoma. Operating hydrometallurgical processing with 99%+ recovery rates, we secure America's critical mineral supply chain while achieving zero liquid discharge.",
+    "slogan": "Securing America's Energy Future",
     "email": "info@z1recycling.com",
+    "foundingDate": "2024",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Bryan County, Oklahoma"
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "8460 US 70",
@@ -62,11 +74,50 @@
       "latitude": 33.9967,
       "longitude": -96.5122
     },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "industry": "Battery Recycling and Critical Minerals Recovery",
+    "naics": "562920",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 50,
+      "maxValue": 150
+    },
+    "knowsAbout": [
+      "Lithium-ion battery recycling",
+      "Hydrometallurgical processing",
+      "Critical mineral recovery",
+      "Sodium-ion battery R&D",
+      "Black mass processing",
+      "EV battery recycling",
+      "Battery supply chain",
+      "Zero liquid discharge systems"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Justice40 Eligible Location"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "FEOC-Free Operations"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "IRA Tax Credit Eligible"
+      }
+    ],
+    "memberOf": {
+      "@type": "Organization",
+      "name": "Oklahoma Critical Minerals Hub"
+    },
     "sameAs": []
   }
   </script>
   
-  <!-- Schema.org Structured Data - LocalBusiness -->
+  <!-- Schema.org Structured Data - LocalBusiness (Enhanced) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,7 +125,7 @@
     "@id": "https://www.z1recycle.com/#localbusiness",
     "name": "Z1 Recycling Center",
     "image": "https://www.z1recycle.com/og-image.png",
-    "description": "Lithium-ion battery recycling and sodium-ion battery R&D facility in Bryan County, Oklahoma. Featuring hydrometallurgical processing, AI-optimized sorting, and 99%+ material recovery rates.",
+    "description": "Lithium-ion battery recycling and sodium-ion battery R&D facility in Bryan County, Oklahoma. Featuring hydrometallurgical processing with AI-optimized sorting, 99%+ material recovery rates, and zero liquid discharge systems. FEOC-free, IRA-compliant critical minerals recovery.",
     "url": "https://www.z1recycle.com",
     "telephone": "",
     "email": "info@z1recycling.com",
@@ -104,15 +155,45 @@
     },
     "founder": {
       "@type": "Person",
-      "name": "Z1 Recycling Team"
+      "name": "Z1 Recycling Leadership Team"
     },
     "foundingDate": "2024",
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
       "minValue": 50,
-      "maxValue": 100
+      "maxValue": 150
     },
-    "keywords": "battery recycling, lithium-ion, sodium-ion, critical minerals, Oklahoma, EV batteries, hydrometallurgy"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Battery Recycling Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "EV Battery Recycling",
+            "description": "Complete recycling of electric vehicle lithium-ion battery packs with 99%+ material recovery"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Critical Minerals Recovery",
+            "description": "Extraction and purification of lithium, cobalt, nickel, manganese, copper, and aluminum to battery-grade specifications"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Black Mass Processing",
+            "description": "Hydrometallurgical processing of shredded battery materials for high-purity metal recovery"
+          }
+        }
+      ]
+    },
+    "keywords": "battery recycling, lithium-ion, sodium-ion, critical minerals, Oklahoma, EV batteries, hydrometallurgy, black mass processing, FEOC-free, IRA compliant, Justice40"
   }
   </script>
   
@@ -131,7 +212,7 @@
   }
   </script>
   
-  <!-- Schema.org Structured Data - FAQ -->
+  <!-- Schema.org Structured Data - FAQPage (Comprehensive for GEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -142,7 +223,7 @@
         "name": "What types of batteries does Z1 Recycling process?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Z1 Recycling Center processes lithium-ion batteries from electric vehicles, consumer electronics, and industrial applications. We also conduct R&D on sodium-ion battery technologies."
+          "text": "Z1 Recycling Center processes lithium-ion batteries from electric vehicles (EV batteries), consumer electronics, and industrial applications including LFP (lithium iron phosphate), NMC (nickel manganese cobalt), NCA (nickel cobalt aluminum), and LCO (lithium cobalt oxide) chemistries. We also conduct R&D on sodium-ion battery technologies for next-generation energy storage."
         }
       },
       {
@@ -150,7 +231,7 @@
         "name": "Where is Z1 Recycling located?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Z1 Recycling Center is located at 8460 US 70, Mead, Oklahoma 73449, in Bryan County. The facility is strategically positioned for logistics and access to major transportation routes."
+          "text": "Z1 Recycling Center is located at 8460 US 70, Mead, Oklahoma 73449, in Bryan County within the Choctaw Nation territory. The 60,000 square foot facility is strategically positioned in the Oklahoma Critical Minerals Hub with direct rail access to the Central US manufacturing corridor."
         }
       },
       {
@@ -158,15 +239,79 @@
         "name": "When will Z1 Recycling begin operations?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Z1 Recycling Center is currently in the permitting phase with operations expected to begin in Q2 2027."
+          "text": "Z1 Recycling Center is currently in the permitting phase with full commercial operations expected to begin in Q2 2027. The facility will operate three specialized zones for battery intake, hydrometallurgical processing, and sodium-ion battery R&D."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the recovery rate at Z1 Recycling?",
+        "name": "What is Z1 Recycling's material recovery rate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Z1 Recycling utilizes advanced hydrometallurgical processing to achieve 99%+ recovery rates for critical minerals including lithium, cobalt, nickel, and manganese."
+          "text": "Z1 Recycling achieves 99%+ recovery rates for critical minerals using advanced hydrometallurgical processing. We recover lithium (Li), cobalt (Co), nickel (Ni), manganese (Mn), copper (Cu), and aluminum (Al) at battery-grade purity levels suitable for direct reuse in new battery manufacturing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is hydrometallurgical processing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hydrometallurgical processing is Z1 Recycling's core technology that uses aqueous chemistry to recover metals from battery materials. Unlike pyrometallurgical methods that burn materials at high temperatures, our hydrometallurgical process operates at lower temperatures (60-90°C), recovers lithium efficiently, produces battery-grade materials, and achieves zero liquid discharge (ZLD) through closed-loop water systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Z1 Recycling FEOC compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Z1 Recycling is 100% FEOC-free (Foreign Entity of Concern free). Our facility uses exclusively domestic supply chains with no Chinese ownership, technology, or processing. This makes our recovered materials eligible for Inflation Reduction Act (IRA) tax credits under Section 45X for critical mineral production."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the environmental impact of Z1 Recycling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Z1 Recycling achieves 70% reduction in carbon emissions compared to virgin mining. Our Zero Liquid Discharge (ZLD) system eliminates wastewater discharge, and we divert 98%+ of materials from landfills. Each ton of recycled battery material saves approximately 5 tons of CO2 emissions compared to mining new materials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Z1 Recycling eligible for federal incentives?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Z1 Recycling qualifies for multiple federal incentives: IRA Section 45X production tax credits for critical minerals, Justice40 initiative benefits due to our location in Bryan County (a disadvantaged community), and potential DOE Loan Programs Office funding. Our FEOC-free status ensures materials qualify for EV tax credit supply chain requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Z1 Recycling's processing capacity?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Z1 Recycling's 60,000 SF facility is designed to process significant volumes of end-of-life batteries annually. Zone A handles battery intake, discharge, and shredding. Zone B provides utility infrastructure including water treatment and energy systems. Zone C houses hydrometallurgical processing and sodium-ion R&D laboratories."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is Z1 Recycling located in Oklahoma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oklahoma offers strategic advantages including: location in the Oklahoma Critical Minerals Hub with expedited permitting, available skilled workforce from transitioning oil/gas industries, central US location with rail access to manufacturing corridors, lower operational costs than coastal facilities, and Justice40 eligible status in Bryan County for federal funding priority."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is black mass and how does Z1 Recycling process it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Black mass is the dark powder produced when lithium-ion batteries are shredded and processed, containing valuable metals like lithium, cobalt, nickel, and manganese. Z1 Recycling's hydrometallurgical process dissolves black mass in optimized organic acid solutions (citric and oxalic acids), then uses selective precipitation and solvent extraction to recover individual metals at battery-grade purity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can investors contact Z1 Recycling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Investors can contact Z1 Recycling through our Investor Relations page at z1recycle.com/investors or email info@z1recycling.com. We welcome inquiries from institutional investors, strategic partners, and those interested in supporting domestic critical minerals infrastructure. Our facility addresses the $95B+ total addressable market for battery recycling by 2035."
         }
       }
     ]
