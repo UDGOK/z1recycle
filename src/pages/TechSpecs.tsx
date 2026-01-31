@@ -4,75 +4,79 @@ import PageHeader from '../components/ui/PageHeader';
 const specs = [
   {
     id: 1,
-    title: 'HYDROMETALLURGICAL EXCELLENCE',
+    title: 'PRE-LITHIUM EXTRACTION TECHNOLOGY',
     icon: (
       <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
       </svg>
     ),
-    headline: 'Selective recovery of critical minerals to Cathode Grade purity (&gt;99.5%).',
-    description: 'Our closed-loop hydrometallurgical process enables targeted extraction of lithium, cobalt, nickel, and manganese with exceptional purity levels suitable for direct cathode precursor resynthesis.',
+    headline: 'Patented early-stage lithium recovery achieves 92% Li extraction before hydromet processing.',
+    description: 'Our proprietary aqueous leaching process at 60°C selectively targets lithium in the electrolyte and SEI layer, producing battery-grade Li₂CO₃ (99.5% purity) upstream. This reduces downstream acid consumption by 40% and simplifies the hydrometallurgical flowsheet.',
     metrics: [
-      { label: 'Purity Level', value: '>99.5%' },
-      { label: 'Recovery Rate', value: '98%+' },
-      { label: 'Process Type', value: 'Closed-Loop' },
+      { label: 'Li Recovery', value: '92%' },
+      { label: 'Li₂CO₃ Purity', value: '99.5%' },
+      { label: 'Acid Reduction', value: '40%' },
     ],
   },
   {
     id: 2,
-    title: 'CROSS-CONTAMINATION CONTROL',
+    title: 'NON-DISCHARGE SHREDDING',
     icon: (
       <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    headline: 'Isolated air handling and material transfer for concurrent Li-ion and Na-ion processing.',
-    description: 'Dedicated material streams with physically separated HVAC systems ensure zero cross-contamination between lithium-ion recycling operations and sodium-ion manufacturing protocols.',
+    headline: 'Direct processing of charged cells eliminates the 24-72 hour discharge bottleneck.',
+    description: 'Inert-atmosphere chamber maintains O₂ below 1% via continuous N₂ injection. Real-time gas chromatography monitors H₂, CO, and electrolyte vapor concentrations. Automated CO₂ fire suppression activates in under 200ms upon thermal runaway detection. No pre-discharge required—charged cells processed safely.',
     metrics: [
-      { label: 'Material Streams', value: 'Isolated' },
-      { label: 'Air Systems', value: 'Dedicated' },
-      { label: 'Contamination', value: 'Zero' },
+      { label: 'O₂ Level', value: '<1%' },
+      { label: 'Response Time', value: '<200ms' },
+      { label: 'Discharge Wait', value: 'ZERO' },
     ],
   },
   {
     id: 3,
-    title: 'AI-OPTIMIZED SORTING',
+    title: 'CRYOGENIC GRANULATION',
     icon: (
       <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    headline: 'Computer vision and sensor-based sorting for maximum material yield.',
-    description: 'Industry 4.0 smart manufacturing with AI-driven quality control, real-time material composition analysis, and predictive maintenance systems optimize every stage of the recycling process.',
+    headline: 'Ultra-low temperature (-40°C) milling preserves cathode crystal structure integrity.',
+    description: 'Liquid nitrogen-cooled hammer mill prevents thermal degradation and electrolyte evaporation during size reduction. Cold processing maintains oxidation state of active materials—critical for direct recycling pathways. Output particle size: D50=2.3mm, D90=5.8mm at 2,500 kg/hr throughput.',
     metrics: [
-      { label: 'Sorting Accuracy', value: '98%+' },
-      { label: 'Analysis', value: 'Real-Time' },
-      { label: 'Maintenance', value: 'Predictive' },
+      { label: 'Temperature', value: '-40°C' },
+      { label: 'Throughput', value: '2.5 T/hr' },
+      { label: 'D50 Size', value: '2.3mm' },
     ],
   },
   {
     id: 4,
-    title: 'CARBON NEGATIVE POTENTIAL',
+    title: 'CLOSED-LOOP HYDROMETALLURGY',
     icon: (
       <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    headline: 'Lower lifecycle emissions than virgin mining.',
-    description: 'Our recycling process emits 70% less CO2 than virgin mining and 30% less than traditional pyrometallurgy (smelting), justifying the energy-intensive ZLD system with net positive environmental impact.',
+    headline: 'Organic acid leaching with 90% lower acid consumption vs. traditional sulfuric processes.',
+    description: 'Selective solvent extraction cascade separates Ni, Co, Mn with 99.9% selectivity. Produces cathode-grade metal sulfates: NiSO₄ (22.3% Ni), CoSO₄ (21.0% Co), MnSO₄ (32.0% Mn). Zero liquid discharge system recycles 98% of process water—no wastewater permits required.',
     metrics: [
-      { label: 'vs Mining', value: '-70% CO2' },
-      { label: 'vs Smelting', value: '-30% CO2' },
-      { label: 'Discharge', value: 'Zero Liquid' },
+      { label: 'Selectivity', value: '99.9%' },
+      { label: 'Water Recycled', value: '98%' },
+      { label: 'Liquid Discharge', value: 'ZERO' },
     ],
   },
 ];
 
 const additionalSpecs = [
-  { label: 'Solvent Recovery Rate', value: '95%', description: 'Closed-loop NMP capture in manufacturing' },
-  { label: 'HEPA Filtration', value: '99.97%', description: 'Particle capture efficiency' },
-  { label: 'Dry Room Dew Point', value: '-40°C', description: 'Ultra-low humidity environment' },
-  { label: 'Processing Atmosphere', value: 'N2 Inert', description: 'Nitrogen-blanketed shredding' },
+  { label: 'XRF Chemistry ID', value: '99.2%', description: 'NMC/LFP/NCA cell identification accuracy' },
+  { label: 'Black Mass NMC', value: '>65%', description: 'Active material content in final product' },
+  { label: 'Graphite Purity', value: '>98%', description: 'Recovered anode material carbon content' },
+  { label: 'Electrode Liberation', value: '450°C', description: 'NMP-free thermal delamination' },
+  { label: 'Metal Separation', value: '>99%', description: 'Al/Cu foil recovery purity' },
+  { label: 'Froth Flotation', value: '98%', description: 'Graphite-cathode separation efficiency' },
+  { label: 'Particle Size D50', value: '8-12μm', description: 'Final black mass specification' },
+  { label: 'Process Water', value: '98%', description: 'Closed-loop recycling rate' },
 ];
 
 export default function TechSpecs() {
