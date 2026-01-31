@@ -46,7 +46,7 @@ const faqData: FAQCategory[] = [
       },
       {
         question: 'How is the process safe with lithium fires?',
-        answer: 'Safety is our top priority. Batteries are fully discharged before processing using brine or resistive discharge. Shredding occurs under nitrogen atmosphere to prevent thermal runaway. We maintain continuous hydrogen monitoring, have HEPA filtration (99.97%), and both dry chemical and water mist fire suppression systems.',
+        answer: 'Safety is our top priority. We use non-discharge shredding technology that processes charged cells safely under nitrogen atmosphere (O₂ below 1%). This eliminates the 24-72 hour discharge bottleneck while maintaining safety. We maintain continuous hydrogen monitoring, real-time gas chromatography, HEPA filtration (99.97%), and automated CO₂ fire suppression that activates in under 200ms.',
       },
       {
         question: 'What happens to the recovered materials?',

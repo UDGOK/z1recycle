@@ -4,16 +4,16 @@ import PageHeader from '../../components/ui/PageHeader';
 import DataTable from '../../components/ui/DataTable';
 
 const equipment = [
-  { num: '1', equipment: 'Discharge System', function: 'Depletes battery charge', specs: 'Brine tanks, H2 venting, conductive discharge' },
-  { num: '2', equipment: 'Primary Shredder', function: 'Size reduction', specs: 'Dual-shaft, N2 injection, 4-6" output' },
-  { num: '3', equipment: 'Granulator', function: 'Secondary size reduction', specs: 'Hammer mill, <10mm output' },
-  { num: '4', equipment: 'Air Classifier', function: 'Light material separation', specs: 'Zig-zag design, removes plastics/foils' },
-  { num: '5', equipment: 'Magnetic Separator', function: 'Ferrous metal recovery', specs: 'Drum type, steel/nickel recovery' },
-  { num: '6', equipment: 'Eddy Current Separator', function: 'Non-ferrous separation', specs: 'Aluminum, copper recovery' },
-  { num: '7', equipment: 'Vibratory Sieve', function: 'Size classification', specs: 'Multi-deck, black mass isolation' },
-  { num: '8', equipment: 'Wet Scrubber', function: 'Gas treatment', specs: 'Removes HF, particulates' },
+  { num: '1', equipment: 'XRF Chemistry Analyzer', function: 'Cell identification', specs: 'NMC/LFP/NCA/LCO detection, 99.2% accuracy' },
+  { num: '2', equipment: 'Inert Atmosphere Shredder', function: 'Non-discharge shredding', specs: 'N₂ injection, O₂ <1%, no pre-discharge required' },
+  { num: '3', equipment: 'Cryogenic Hammer Mill', function: 'Size reduction', specs: '-40°C cooling, <6mm output' },
+  { num: '4', equipment: 'Air Classifier', function: 'Light material separation', specs: 'Zig-zag design, >99% plastic capture' },
+  { num: '5', equipment: 'Magnetic Separator', function: 'Ferrous metal recovery', specs: 'Rare-earth drums, steel/nickel recovery' },
+  { num: '6', equipment: 'Eddy Current Separator', function: 'Non-ferrous separation', specs: 'Al/Cu recovery >99% purity' },
+  { num: '7', equipment: 'Pre-Lithium Reactor', function: 'Early Li extraction', specs: '90-98% Li recovery, no wastewater' },
+  { num: '8', equipment: 'Froth Flotation Cell', function: 'Graphite separation', specs: '>98% C purity recovered' },
   { num: '9', equipment: 'Baghouse Dust Collector', function: 'Air filtration', specs: 'HEPA 99.97%, explosion-proof' },
-  { num: '10', equipment: 'Super Sack Station', function: 'Product packaging', specs: '1-ton capacity, sealed filling' },
+  { num: '10', equipment: 'ZLD System', function: 'Water recycling', specs: '98% water recovery, zero discharge' },
 ];
 
 const safetyFeatures = [
@@ -93,8 +93,8 @@ export default function ZoneA() {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {[
                 { step: 'INTAKE', desc: 'Receive & classify EoL batteries' },
-                { step: 'DISCHARGE', desc: 'Safe voltage depletion to <1V' },
-                { step: 'SHRED', desc: 'N2 atmosphere size reduction' },
+                { step: 'IDENTIFY', desc: 'XRF chemistry detection' },
+                { step: 'SHRED', desc: 'Non-discharge N₂ atmosphere shredding' },
                 { step: 'SEPARATE', desc: 'Magnetic & optical sorting' },
                 { step: 'PACKAGE', desc: 'Black mass sealed for transport' },
               ].map((item, index) => (
@@ -227,8 +227,8 @@ export default function ZoneA() {
                 </p>
                 <p>
                   Key safety features include continuous hydrogen monitoring, automatic nitrogen 
-                  injection, and explosion-proof construction. The system processes batteries 
-                  that have been safely discharged to below 1V per cell.
+                  injection, and explosion-proof construction. Our non-discharge shredding system 
+                  processes charged cells safely under inert atmosphere—no pre-discharge required.
                 </p>
                 <p>
                   Output material moves to the granulator for further size reduction before 
