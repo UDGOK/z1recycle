@@ -20,6 +20,7 @@ import Team from './pages/about/Team';
 import Contact from './pages/about/Contact';
 import TermsOfService from './pages/TermsOfService';
 import Community from './pages/Community';
+import InvestorRelations from './pages/InvestorRelations';
 
 function App() {
   return (
@@ -58,6 +59,9 @@ function App() {
           <Route path="/about/team" element={<Team />} />
           <Route path="/about/faq" element={<FAQ />} />
           <Route path="/about/contact" element={<Contact />} />
+          
+          {/* Investor Relations */}
+          <Route path="/investors" element={<InvestorRelations />} />
           
           {/* Legal */}
           <Route path="/terms" element={<TermsOfService />} />

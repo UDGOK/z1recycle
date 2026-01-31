@@ -39,6 +39,7 @@ const navItems: NavItem[] = [
   },
   { label: 'SUSTAINABILITY', href: '/sustainability' },
   { label: 'COMMUNITY', href: '/community' },
+  { label: 'INVESTORS', href: '/investors' },
   {
     label: 'ABOUT',
     href: '/about',
