@@ -30,7 +30,7 @@ const processSteps = [
     step: 4,
     name: 'Pre-Lithium Extraction',
     description: 'Patented aqueous process recovers lithium carbonate before downstream processing—unique to our technology.',
-    details: 'Selective leaching at 60°C with proprietary reagent targets lithium in electrolyte and SEI layer. Achieves 92% Li recovery at this stage. Produces battery-grade Li₂CO₃ (99.5% purity) directly. Reduces downstream hydromet complexity and acid consumption by 40%.',
+    details: 'In-situ crystal transformation and mild leaching of black mass targets lithium selectively. Achieves 90-98% Li recovery with >98% selectivity. Produces high-purity lithium solution (>20 g/L concentration). Almost no loss of Ni and Co during this stage. No wastewater or solid waste generated.',
     icon: '04',
   },
   {
@@ -64,7 +64,7 @@ const processSteps = [
 ];
 
 const recoveryStats = [
-  { material: 'Lithium', rate: 95, color: '#00ff88' },
+  { material: 'Lithium', rate: 98, color: '#00ff88' },
   { material: 'Nickel', rate: 98, color: '#3b82f6' },
   { material: 'Cobalt', rate: 99, color: '#8b5cf6' },
   { material: 'Copper', rate: 99, color: '#ff7b00' },
