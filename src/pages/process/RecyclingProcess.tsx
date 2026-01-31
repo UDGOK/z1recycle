@@ -7,67 +7,67 @@ import AnimatedCounter from '../../components/ui/AnimatedCounter';
 const processSteps = [
   {
     step: 1,
-    name: 'Battery Collection',
-    description: 'Batteries arrive at the facility in approved containers. Each batch is logged, photographed, and assessed for damage or thermal events.',
-    details: 'Incoming batteries are sorted by chemistry (NMC, LFP, NCA) and state of charge. Damaged or swollen cells are isolated for special handling.',
-    icon: 'B',
+    name: 'Intelligent Intake & Sorting',
+    description: 'Advanced robotic intake system with AI-powered chemistry identification and automated risk assessment.',
+    details: 'X-ray fluorescence (XRF) and machine vision identify cell chemistry (NMC, LFP, NCA, LCO) with 99.2% accuracy. Thermal imaging detects compromised cells. Automated conveyor routing sorts by chemistry type and hazard level—no manual handling of high-risk units.',
+    icon: '01',
   },
   {
     step: 2,
-    name: 'Safe Discharge',
-    description: 'Batteries are discharged to safe voltage levels using resistive discharge or brine immersion systems.',
-    details: 'Target voltage is below 1V per cell. Hydrogen gas from brine discharge is captured and vented safely. Process takes 24-72 hours depending on pack size.',
-    icon: 'D',
+    name: 'Non-Discharge Shredding',
+    description: 'Revolutionary direct-feed shredding eliminates the 24-72 hour discharge bottleneck while maintaining safety.',
+    details: 'Proprietary inert-atmosphere chamber maintains O₂ below 1% using continuous nitrogen injection. Real-time gas chromatography monitors H₂, CO, and electrolyte vapor. Automated fire suppression with CO₂ flooding activates in <200ms if thermal runaway is detected. Processes charged cells safely—no pre-discharge required.',
+    icon: '02',
   },
   {
     step: 3,
-    name: 'Primary Shredding',
-    description: 'Discharged batteries enter the dual-shaft shredder under nitrogen atmosphere to prevent thermal events.',
-    details: 'Output size is 4-6 inches. Continuous hydrogen and temperature monitoring. Automatic nitrogen injection maintains inert atmosphere.',
-    icon: 'S',
+    name: 'Cryogenic Granulation',
+    description: 'Ultra-low temperature milling (-40°C) prevents thermal events and preserves cathode material integrity.',
+    details: 'Liquid nitrogen-cooled hammer mill reduces material to <6mm with zero thermal degradation. Cold processing prevents electrolyte evaporation and oxidation of active materials. Output particle size distribution: D50 = 2.3mm, D90 = 5.8mm. Throughput: 2,500 kg/hour per line.',
+    icon: '03',
   },
   {
     step: 4,
-    name: 'Secondary Granulation',
-    description: 'Hammer mill reduces material to less than 10mm for efficient separation.',
-    details: 'Enclosed system with dust collection. Material exits through screen sizing. Oversized material returns for additional processing.',
-    icon: 'G',
+    name: 'Pre-Lithium Extraction',
+    description: 'Patented aqueous process recovers lithium carbonate before downstream processing—unique to our technology.',
+    details: 'Selective leaching at 60°C with proprietary reagent targets lithium in electrolyte and SEI layer. Achieves 92% Li recovery at this stage. Produces battery-grade Li₂CO₃ (99.5% purity) directly. Reduces downstream hydromet complexity and acid consumption by 40%.',
+    icon: '04',
   },
   {
     step: 5,
-    name: 'Air Classification',
-    description: 'AI-optimized zig-zag classifier with computer vision separates materials by composition.',
-    details: 'Sensor-based sorting with real-time material composition analysis. Light fraction to recycler, heavy to magnetic separation. AI achieves 98%+ yield.',
-    icon: 'A',
+    name: 'Multi-Stage Separation',
+    description: 'Cascading physical separation using air classification, magnetic drums, and eddy current technology.',
+    details: 'Stage 1: Zig-zag air classifier separates separator film and plastics (>99% capture). Stage 2: Rare-earth magnetic drums extract steel casings and Ni tabs. Stage 3: High-frequency eddy current separators recover Al foil and Cu current collectors. Combined metal purity exceeds 97%.',
+    icon: '05',
   },
   {
     step: 6,
-    name: 'Magnetic Separation',
-    description: 'Drum magnets extract ferrous metals including steel casings and nickel tabs.',
-    details: 'Recovered steel is sold as scrap. Nickel-rich fraction may be further processed. Non-magnetic material continues downstream.',
-    icon: 'M',
+    name: 'Electrode Liberation',
+    description: 'Proprietary thermal delamination separates active material from foil substrates without chemical degradation.',
+    details: 'Controlled pyrolysis at 450°C under N₂ atmosphere volatilizes binder (PVDF) without oxidizing cathode material. Al and Cu foils recovered at >99% purity. Liberated electrode powder maintains original crystal structure—critical for direct recycling applications. NMP-free process eliminates toxic solvent handling.',
+    icon: '06',
   },
   {
     step: 7,
-    name: 'Eddy Current Separation',
-    description: 'Non-ferrous metals (aluminum, copper) are ejected by induced magnetic fields.',
-    details: 'Aluminum from casings and copper from current collectors are recovered separately. Both are valuable recyclable commodities.',
-    icon: 'E',
+    name: 'Black Mass Refining',
+    description: 'High-purity black mass production through advanced flotation and selective calcination.',
+    details: 'Froth flotation separates graphite anode (>98% C purity) from cathode material. Selective calcination removes residual carbon and organics. Final black mass composition: 18-22% Ni, 4-8% Co, 8-12% Mn, 6-8% Li (chemistry dependent). Particle size: D50 = 8-12μm. Ready for hydrometallurgical refining or direct cathode resynthesis.',
+    icon: '07',
   },
   {
     step: 8,
-    name: 'Black Mass Recovery',
-    description: 'Cathode-grade electrode powder recovered via selective hydrometallurgical processing.',
-    details: 'Targeted extraction of Li, Co, Ni, Mn via closed-loop hydrometallurgy achieves >98% purity—ready for direct cathode precursor resynthesis.',
-    icon: 'R',
+    name: 'Hydrometallurgical Recovery',
+    description: 'Closed-loop solvent extraction produces battery-grade metal sulfates and lithium carbonate.',
+    details: 'Selective leaching with organic acids (90% lower acid consumption vs. sulfuric). Solvent extraction cascade separates Ni, Co, Mn with 99.9% selectivity. Produces NiSO₄ (22.3% Ni), CoSO₄ (21.0% Co), MnSO₄ (32.0% Mn)—all meeting cathode precursor specs. Zero liquid discharge system recycles 98% of process water.',
+    icon: '08',
   },
 ];
 
 const recoveryStats = [
-  { material: 'Copper', rate: 97, color: '#ff7b00' },
-  { material: 'Aluminum', rate: 95, color: '#c0c0c0' },
-  { material: 'Steel', rate: 95, color: '#6b7280' },
-  { material: 'Black Mass', rate: 98, color: '#1f2937' },
+  { material: 'Lithium', rate: 95, color: '#00ff88' },
+  { material: 'Nickel', rate: 98, color: '#3b82f6' },
+  { material: 'Cobalt', rate: 99, color: '#8b5cf6' },
+  { material: 'Copper', rate: 99, color: '#ff7b00' },
 ];
 
 export default function RecyclingProcess() {
@@ -240,10 +240,10 @@ export default function RecyclingProcess() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { material: 'Copper', destination: 'Metal Smelters', purity: '97%+', icon: 'Cu' },
-              { material: 'Aluminum', destination: 'Recyclers', purity: '95%+', icon: 'Al' },
-              { material: 'Steel', destination: 'Scrap Market', purity: '95%+', icon: 'Fe' },
-              { material: 'Black Mass', destination: 'Cathode Precursor', purity: '>98% Purity', icon: 'BM' },
+              { material: 'Li₂CO₃', destination: 'Cathode Manufacturing', purity: '99.5% Battery Grade', icon: 'Li' },
+              { material: 'NiSO₄', destination: 'pCAM Production', purity: '22.3% Ni Content', icon: 'Ni' },
+              { material: 'CoSO₄', destination: 'pCAM Production', purity: '21.0% Co Content', icon: 'Co' },
+              { material: 'Black Mass', destination: 'Direct Recycling', purity: '>65% NMC Content', icon: 'BM' },
             ].map((item, index) => (
               <motion.div
                 key={item.material}
