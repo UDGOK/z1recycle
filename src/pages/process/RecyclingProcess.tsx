@@ -51,14 +51,14 @@ const processSteps = [
     step: 7,
     name: 'Black Mass Refining',
     description: 'High-purity black mass production through advanced flotation and selective calcination.',
-    details: 'Froth flotation separates graphite anode (>98% C purity) from cathode material. Selective calcination removes residual carbon and organics. Final black mass composition: 18-22% Ni, 4-8% Co, 8-12% Mn, 6-8% Li (chemistry dependent). Particle size: D50 = 8-12μm. Ready for hydrometallurgical refining or direct cathode resynthesis.',
+    details: 'Following electrode liberation, material undergoes fine ball milling to reduce particle size from mm-scale to D50 = 8-12μm—optimal for downstream processing. Froth flotation separates graphite anode (>98% C purity) from cathode material. Selective calcination removes residual carbon and organics. Final black mass composition: 18-22% Ni, 4-8% Co, 8-12% Mn, 6-8% Li (chemistry dependent). Ready for hydrometallurgical refining or direct cathode resynthesis.',
     icon: '07',
   },
   {
     step: 8,
     name: 'Hydrometallurgical Recovery',
     description: 'Closed-loop solvent extraction produces battery-grade metal sulfates and lithium carbonate.',
-    details: 'Selective leaching with organic acids (90% lower acid consumption vs. sulfuric). Solvent extraction cascade separates Ni, Co, Mn with 99.9% selectivity. Produces NiSO₄ (22.3% Ni), CoSO₄ (21.0% Co), MnSO₄ (32.0% Mn)—all meeting cathode precursor specs. Zero liquid discharge system recycles 98% of process water.',
+    details: 'Selective leaching with organic acids such as citric acid and oxalic acid (90% lower acid consumption vs. sulfuric). Solvent extraction cascade separates Ni, Co, Mn with 99.9% selectivity. Produces NiSO₄ (22.3% Ni), CoSO₄ (21.0% Co), MnSO₄ (32.0% Mn)—all meeting cathode precursor specs. Zero liquid discharge system recycles 98% of process water.',
     icon: '08',
   },
 ];
