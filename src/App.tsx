@@ -21,6 +21,7 @@ import Contact from './pages/about/Contact';
 import TermsOfService from './pages/TermsOfService';
 import Community from './pages/Community';
 import InvestorRelations from './pages/InvestorRelations';
+import MarketIntelligence from './pages/MarketIntelligence';
 
 function App() {
   return (
@@ -62,6 +63,9 @@ function App() {
           
           {/* Investor Relations */}
           <Route path="/investors" element={<InvestorRelations />} />
+          
+          {/* Market Intelligence */}
+          <Route path="/market" element={<MarketIntelligence />} />
           
           {/* Legal */}
           <Route path="/terms" element={<TermsOfService />} />

@@ -55,6 +55,7 @@ const navItems: NavItem[] = [
     ],
   },
   { label: 'INVESTORS', href: '/investors' },
+  { label: 'MARKET', href: '/market' },
 ];
 
 // Blinking cursor component
